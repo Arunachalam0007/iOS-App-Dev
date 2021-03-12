@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-MQ-k8e">
-                                <rect key="frame" x="0.0" y="0.0" width="419" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GreenBackground" translatesAutoresizingMaskIntoConstraints="NO" id="F6H-MQ-k8e">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="DiceOne" translatesAutoresizingMaskIntoConstraints="NO" id="r2o-T3-PIs">
                                 <rect key="frame" x="20" y="391" width="150" height="150"/>
@@ -47,6 +46,12 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="F6H-MQ-k8e" secondAttribute="bottom" constant="-34" id="8HF-ZF-MHs"/>
+                            <constraint firstItem="F6H-MQ-k8e" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="IuN-f7-PEz"/>
+                            <constraint firstAttribute="trailing" secondItem="F6H-MQ-k8e" secondAttribute="trailing" id="Pts-rL-RME"/>
+                            <constraint firstItem="F6H-MQ-k8e" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dnO-4s-a4y"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="diceImage1" destination="r2o-T3-PIs" id="1BA-LY-nfI"/>
