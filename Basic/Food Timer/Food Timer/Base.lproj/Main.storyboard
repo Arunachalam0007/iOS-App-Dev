@@ -50,6 +50,9 @@
                                                         <state key="normal" title="Soft">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="foodSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFd-BV-0AL"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -75,6 +78,9 @@
                                                         <state key="normal" title="Medium">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="foodSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xat-aJ-bSf"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -100,6 +106,9 @@
                                                         <state key="normal" title="Hard">
                                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="foodSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZZj-7Z-Jey"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
@@ -127,6 +136,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mso-Y8-QRr" secondAttribute="bottom" constant="72.5" id="t0Q-JS-I6e"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="foodLabel" destination="WKF-Ip-8vs" id="otf-YP-fhK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
