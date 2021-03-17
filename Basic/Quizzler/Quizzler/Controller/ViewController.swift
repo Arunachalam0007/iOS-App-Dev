@@ -14,16 +14,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var falseBtn: UIButton!
     @IBOutlet weak var progressView: UIProgressView!
     
-    var questionNumber = 0
+    @IBOutlet weak var scoreLabel: UILabel!
     
-    var quiz = [
-    Question(q: "IND Won the World cup at 2011", a: true),
-        Question(q: "IND Won the World cup at 2020", a: false),
-        Question(q: "AUS Won the World cup at 2020", a: true),
-        Question(q: "Current Indian Captain is Kholi", a: true),
-        Question(q: "Kohli Let the IPL tropy Many Times", a: true),
-        
-    ]
+    var quizBrain = QuizBrain()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,34 +27,29 @@ class ViewController: UIViewController {
 
     @IBAction func ansBtnPressed(_ sender: UIButton) {
         
+        
         let userAns = Bool(truncating: sender.tag as NSNumber)
-        let actualAns = quiz[questionNumber].answer
+        let correctAns = quizBrain.getQuesAns(userAns: userAns)
         
-        print(userAns)
-        print(actualAns)
         
-        if userAns == actualAns {
+        if correctAns {
             sender.backgroundColor = .green
         } else {
             sender.backgroundColor = .red
         }
         
-        
-        if questionNumber < quiz.count-1 {
-            questionNumber += 1
-        } else {
-            questionNumber = 0
-        }
+        quizBrain.nextQuestion()
         
         Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
         
     }
     
     @objc func updateUI()  {
-        questionLabel.text = quiz[questionNumber].question
+        questionLabel.text = quizBrain.getQuestion()
         trueBtn.backgroundColor = nil
         falseBtn.backgroundColor =  UIColor.clear
-        progressView.progress = Float (questionNumber)/Float(quiz.count)
+        progressView.progress = quizBrain.getProgress()
+        scoreLabel.text = quizBrain.getScore()
     }
     
 }
