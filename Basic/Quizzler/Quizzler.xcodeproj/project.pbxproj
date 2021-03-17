@@ -13,6 +13,7 @@
 		DB5373FB260222A300895EBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5373F9260222A300895EBA /* Main.storyboard */; };
 		DB5373FD260222A500895EBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB5373FC260222A500895EBA /* Assets.xcassets */; };
 		DB537400260222A500895EBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5373FE260222A500895EBA /* LaunchScreen.storyboard */; };
+		DB53740C260225F900895EBA /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB53740B260225F900895EBA /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DB5373FC260222A500895EBA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB5373FF260222A500895EBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB537401260222A500895EBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB53740B260225F900895EBA /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		DB5373F2260222A300895EBA /* Quizzler */ = {
 			isa = PBXGroup;
 			children = (
+				DB53740B260225F900895EBA /* Question.swift */,
 				DB5373F3260222A300895EBA /* AppDelegate.swift */,
 				DB5373F5260222A300895EBA /* SceneDelegate.swift */,
 				DB5373F7260222A300895EBA /* ViewController.swift */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5373F8260222A300895EBA /* ViewController.swift in Sources */,
+				DB53740C260225F900895EBA /* Question.swift in Sources */,
 				DB5373F4260222A300895EBA /* AppDelegate.swift in Sources */,
 				DB5373F6260222A300895EBA /* SceneDelegate.swift in Sources */,
 			);
