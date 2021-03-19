@@ -131,7 +131,7 @@
                         <outlet property="heightValueLabel" destination="Xcz-1j-2c9" id="ZUY-zS-ZjD"/>
                         <outlet property="weightSlider" destination="s2X-C5-Zcz" id="0c1-aB-HlP"/>
                         <outlet property="weightValueLabel" destination="LTF-aL-8qu" id="wL8-UR-nsV"/>
-                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="goToResult" id="Cgx-tg-eKx"/>
+                        <segue destination="lkq-xS-Cin" kind="presentation" identifier="goToResult" modalTransitionStyle="flipHorizontal" id="Cgx-tg-eKx"/>
                         <segue destination="vxv-5C-URy" kind="presentation" identifier="goToSecond" id="Z5A-2x-1zb"/>
                     </connections>
                 </viewController>
