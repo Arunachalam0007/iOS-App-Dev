@@ -32,23 +32,28 @@ class CalculateViewController: UIViewController {
         
         calculatedBMIValue = String(format: "%.1f", bmiResult)
         
-//        let mySecondViewController = SecondViewController()
-//        mySecondViewController.bmiValue = String(format: "%.1f", bmiResult)
-//        self.present(mySecondViewController, animated: true, completion: nil)
+        //        let mySecondViewController = SecondViewController()
+        //        mySecondViewController.bmiValue = String(format: "%.1f", bmiResult)
+        //        self.present(mySecondViewController, animated: true, completion: nil)
         
         // which is used to naviate to another page
+        
+        //performSegue(withIdentifier: "goToSecond", sender: self)
         performSegue(withIdentifier: "goToResult", sender: self)
     }
     
     
     // this method is used to initialize the class variable and pass value to the argument
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         // finding the identifier
-        if segue.identifier == "goToResult"{
+        if segue.identifier == "goToResult"  {
             // get the result view controller by downcasting (as!) viewcontroller to viewcontroller
             let resultVC = segue.destination as! ResultViewController
             resultVC.bmiResult = calculatedBMIValue
+        } else if segue.identifier == "goToSecond" {
+            let resultVC = segue.destination as! SecondViewController
+            resultVC.bmiValue = calculatedBMIValue
         }
     }
     
