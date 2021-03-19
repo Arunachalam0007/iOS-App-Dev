@@ -9,13 +9,14 @@ import UIKit
 
 class CalculateViewController: UIViewController {
     
-    var calculatedBMIValue : String = ""
     @IBOutlet weak var heightValueLabel: UILabel!
     
     @IBOutlet weak var weightValueLabel: UILabel!
     @IBOutlet weak var heightSlider: UISlider!
     
     @IBOutlet weak var weightSlider: UISlider!
+    
+    var calcBrain = CalcBMIBrain()
     
     @IBAction func heightSliderChanged(_ sender: UISlider) {
         // print("%.02f", your_float_var)
@@ -27,10 +28,12 @@ class CalculateViewController: UIViewController {
         weightValueLabel.text =   "\(weight)kg"
     }
     @IBAction func calcuateResultBMI(_ sender: UIButton) {
-        let bmiResult = weightSlider.value / pow(heightSlider.value, 2)
-        print(bmiResult)
+       
+//        let bmiResult = weightSlider.value / pow(heightSlider.value, 2)
+//        print(bmiResult)
         
-        calculatedBMIValue = String(format: "%.1f", bmiResult)
+//        calculatedBMIValue = String(format: "%.1f", bmiResult)
+        calcBrain.calcBMI(height: heightSlider.value, weight: weightSlider.value)
         
         //        let mySecondViewController = SecondViewController()
         //        mySecondViewController.bmiValue = String(format: "%.1f", bmiResult)
@@ -50,16 +53,19 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResult"  {
             // get the result view controller by downcasting (as!) viewcontroller to viewcontroller
             let resultVC = segue.destination as! ResultViewController
-            resultVC.bmiResult = calculatedBMIValue
+            resultVC.bmiResult = calcBrain.getBMIValue()
+            resultVC.bmiAdviceValue =  calcBrain.getBMIAdvice()
+            resultVC.bmiColor = calcBrain.getBMIColor()
         } else if segue.identifier == "goToSecond" {
             let resultVC = segue.destination as! SecondViewController
-            resultVC.bmiValue = calculatedBMIValue
+            resultVC.bmiValue = calcBrain.getBMIValue()
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print(calcBrain.getBMIValue())
     }
     
     
