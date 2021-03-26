@@ -20,6 +20,7 @@ struct WeatherModel {
     // Computed Properties
     
     var tempString: String {
+        print("Temp is :", temp)
         return String(temp)
     }
     
