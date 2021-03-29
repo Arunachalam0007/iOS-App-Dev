@@ -8,11 +8,16 @@
 
 import Foundation
 
+protocol WeatherManagerProDelegate {
+    func didUpdateWeather(weather: WeatherModel)
+}
+
 struct WeatherManager {
     
     let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=3cc913675a5741818d6feaf11955e809&units=metric"
     
-    var wDelegate = WeatherManagerDelegate?.self
+    var delegate = WeatherManagerProDelegate?.self
+    
     
     func fetchWeather(cityName: String) {
         let uRL = "\(weatherURL)&q=\(cityName)"
@@ -40,9 +45,16 @@ struct WeatherManager {
                 if let safeData = data {
                    // let dataString = String(data: safeData, encoding: .utf8)
                    // print(dataString!)
-                    let weather = self.parseData(weatherData: safeData)
-
-                    wDelegate.didUpdateWeather(weather: weather!)
+                    let weathers = self.parseData(weatherData: safeData)
+                    //var del = wDelegate
+                    //self.delegate.didUpdateWeather(weather: weathers!)
+                    DispatchQueue.main.async {
+                        let weatherVc = WeatherViewController()
+                       // weatherVc.didUpdateWeather(weather: weathers!)
+                    }
+                   
+                   // wDelegate.didUpdateWeather(weather: weather!)
+                    //print("Delegate Function: ",self.wDelegate)
                 }
             }
             // start the task
