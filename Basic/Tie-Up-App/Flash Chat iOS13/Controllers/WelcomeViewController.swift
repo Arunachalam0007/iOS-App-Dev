@@ -14,7 +14,21 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        titleLabel.text = ""
+        var charIndex = 0.0
+        let labelText = "🤳🏼 Tie_Up 🤳🏼"
 
+        for text in labelText {
+            print("Timers: ", 0.5 * charIndex)
+            print(text)
+            print("------")
+            Timer.scheduledTimer(withTimeInterval: 0.5 * charIndex, repeats: false) { (timer) in
+                self.titleLabel.text?.append(text)
+            }
+            charIndex += 1
+
+        }
        
     }
     
