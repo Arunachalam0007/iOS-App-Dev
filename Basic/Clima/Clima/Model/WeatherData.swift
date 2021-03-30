@@ -20,5 +20,5 @@ struct Weather: Codable {
 }
 
 struct main: Codable {
-    var temp: Int
+    var temp: Double
 }

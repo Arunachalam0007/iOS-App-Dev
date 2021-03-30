@@ -14,7 +14,7 @@ struct WeatherModel {
     
     var conditionId: Int
     var cityName: String
-    var temp: Int
+    var temp: Double
     
     
     // Computed Properties
