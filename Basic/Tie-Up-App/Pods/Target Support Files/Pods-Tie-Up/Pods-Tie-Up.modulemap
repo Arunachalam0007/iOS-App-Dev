@@ -1,0 +1,6 @@
+framework module Pods_Tie_Up {
+  umbrella header "Pods-Tie-Up-umbrella.h"
+
+  export *
+  module * { export * }
+}

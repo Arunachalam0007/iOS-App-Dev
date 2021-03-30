@@ -1,0 +1,10 @@
+platform :ios, '10.0'
+
+target 'Tie-Up' do
+  use_frameworks!
+
+  # Pods for Tie-Up
+  
+  pod 'CLTypingLabel', '~> 0.4.0'
+
+end
