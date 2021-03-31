@@ -6,5 +6,8 @@ target 'Tie-Up' do
   # Pods for Tie-Up
   
   pod 'CLTypingLabel'
+  
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end
