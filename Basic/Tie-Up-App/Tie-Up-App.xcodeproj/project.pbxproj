@@ -17,6 +17,7 @@
 		0B62818F235DF01000E35CAF /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B62818E235DF01000E35CAF /* LoginViewController.swift */; };
 		0B628191235DF01B00E35CAF /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B628190235DF01B00E35CAF /* ChatViewController.swift */; };
 		DB382CA7261451C000841DB8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB382CA6261451C000841DB8 /* GoogleService-Info.plist */; };
+		DBE49138261D77C50073BE04 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE49137261D77C50073BE04 /* message.swift */; };
 		F496F8C966F1AE99AA02A662 /* Pods_Tie_Up.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF1A7B364D4680356FB2811 /* Pods_Tie_Up.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		7CF1A7B364D4680356FB2811 /* Pods_Tie_Up.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tie_Up.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB121D980694F7A192F4E4FD /* Pods-Tie-Up.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tie-Up.release.xcconfig"; path = "Target Support Files/Pods-Tie-Up/Pods-Tie-Up.release.xcconfig"; sourceTree = "<group>"; };
 		DB382CA6261451C000841DB8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DBE49137261D77C50073BE04 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		0B628194235DF03A00E35CAF /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DBE49137261D77C50073BE04 /* message.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE49138261D77C50073BE04 /* message.swift in Sources */,
 				0B62818B235DF00000E35CAF /* WelcomeViewController.swift in Sources */,
 				0B628177235DEE8100E35CAF /* AppDelegate.swift in Sources */,
 				0B628179235DEE8100E35CAF /* SceneDelegate.swift in Sources */,
