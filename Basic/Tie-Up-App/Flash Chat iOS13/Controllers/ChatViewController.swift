@@ -16,7 +16,7 @@ class ChatViewController: UIViewController {
     
     let fireDB = Firestore.firestore()
     
-    var message: [Message] = []
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,12 +63,12 @@ class ChatViewController: UIViewController {
             } else {
                 if let snapshotDocuments = querySnapshot?.documents {
                     // Make an empty of the Message Class object Array
-                    self.message = []
+                    self.messages = []
                     for doc in snapshotDocuments {
                         let data = doc.data()
                         if let messageData = data["message"] as? String, let senderData = data["sender"] as? String {
                             let messageObj = Message(sender: senderData, body: messageData)
-                            self.message.append(messageObj)
+                            self.messages.append(messageObj)
                             
                             print("Messages: ",messageObj)
                             DispatchQueue.main.async {
@@ -85,13 +85,27 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        message.count
+        messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        let message = messages[indexPath.item]
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCell
-        cell.messageLabel.text = message[indexPath.item].body
+        cell.messageLabel.text = message.body
+        
+        //find user login
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: "BrandLightPurple")
+            cell.messageLabel.textColor = UIColor(named: "BrandPurple")
+        } else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: "BrandPurple")
+            cell.messageLabel.textColor = UIColor(named: "BrandLightPurple")
+        }
+        
         return cell
     }
     
