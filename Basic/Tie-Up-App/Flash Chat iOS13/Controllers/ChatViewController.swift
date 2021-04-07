@@ -34,7 +34,7 @@ class ChatViewController: UIViewController {
             
             var myFireDB: DocumentReference? = nil
             // Add Data or Message into Firestore Cloud
-            myFireDB = fireDB.collection("Messages").addDocument(data: ["sender":senderEmail,"message":message]) { (error) in
+            myFireDB = fireDB.collection("Messages").addDocument(data: ["sender":senderEmail,"message":message,"messageSendingTime":Date().timeIntervalSince1970]) { (error) in
                 if let e = error {
                     print("Unable to Store your Data into FireStoreCloud: ",e)
                 } else {
@@ -42,7 +42,6 @@ class ChatViewController: UIViewController {
                 }
             }
         }
-        
         
     }
     
@@ -58,7 +57,7 @@ class ChatViewController: UIViewController {
     func loadFireStoreMessage()  {
         
         // addSnapshotListener which is called the method frequently whenever the db got updated
-        fireDB.collection("Messages").addSnapshotListener() { (querySnapshot, err) in
+        fireDB.collection("Messages").order(by: "messageSendingTime").addSnapshotListener() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -75,7 +74,6 @@ class ChatViewController: UIViewController {
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                             }
-                            
                         }
                     }
                 }
