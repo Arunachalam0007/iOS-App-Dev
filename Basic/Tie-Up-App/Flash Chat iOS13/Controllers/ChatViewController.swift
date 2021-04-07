@@ -39,6 +39,7 @@ class ChatViewController: UIViewController {
                     print("Unable to Store your Data into FireStoreCloud: ",e)
                 } else {
                     print("SuccessFully Stored Your Data and ID is: ",myFireDB!.documentID)
+                    self.messageTextfield.text = ""
                 }
             }
         }
@@ -73,6 +74,11 @@ class ChatViewController: UIViewController {
                             print("Messages: ",messageObj)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
+                                
+                                // scroll the row to top
+                                var indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                                
                             }
                         }
                     }
