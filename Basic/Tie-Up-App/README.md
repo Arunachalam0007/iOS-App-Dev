@@ -20,3 +20,28 @@ Fire Store: (Add or Create Data into firestore) 
                 }
             }
         }
+        
+5. Read or Load FireStoreMessage:
+(https://firebase.google.com/docs/reference/swift/firebasefirestore/api/reference/Classes/QuerySnapshot)
+ func loadFireStoreMessage()  {
+fireDB.collection("Messages").getDocuments() { (querySnapshot, err) in
+     if let err = err {
+        print("Error getting documents: \(err)")
+    } else {
+        if let snapshotDocuments = querySnapshot?.documents {
+            for doc in snapshotDocuments {
+                let data = doc.data()
+                if let messageData = data["message"] as? String, let senderData = data["sender"] as? String {
+                    let messageObj = Message(sender: senderData, body: messageData)
+                    self.message.append(messageObj)
+                    print("Messages: ",messageObj)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        }
+    }
+}
+}
+

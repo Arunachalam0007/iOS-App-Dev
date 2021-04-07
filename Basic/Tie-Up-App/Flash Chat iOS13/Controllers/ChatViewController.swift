@@ -10,20 +10,17 @@ import UIKit
 import Firebase
 
 class ChatViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
     let fireDB = Firestore.firestore()
     
-    var message: [Message] = [
-        Message(sender: "sha@123", body: "Hi sha asdfasdfasdfs sdfasdfsadf safdasdf sadf asdfds af s asd fas dfs adf sdf sd"),
-        Message(sender: "aru@123", body: "Hello aru"),
-        Message(sender: "kalai@123", body: "AK")
-    ]
+    var message: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadFireStoreMessage()
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         tableView.dataSource = self
         title = "🤳🏼 Tie_Up 🤳🏼"
@@ -58,7 +55,32 @@ class ChatViewController: UIViewController {
         }
     }
     
+    func loadFireStoreMessage()  {
+        
+        fireDB.collection("Messages").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                if let snapshotDocuments = querySnapshot?.documents {
+                    for doc in snapshotDocuments {
+                        let data = doc.data()
+                        if let messageData = data["message"] as? String, let senderData = data["sender"] as? String {
+                            let messageObj = Message(sender: senderData, body: messageData)
+                            self.message.append(messageObj)
+                            
+                            print("Messages: ",messageObj)
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
 
 extension ChatViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
