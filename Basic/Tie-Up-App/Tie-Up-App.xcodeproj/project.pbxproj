@@ -20,6 +20,7 @@
 		DBE49138261D77C50073BE04 /* message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE49137261D77C50073BE04 /* message.swift */; };
 		DBE4913C261D82BB0073BE04 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE4913A261D82BB0073BE04 /* MessageCell.swift */; };
 		DBE4913D261D82BB0073BE04 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DBE4913B261D82BB0073BE04 /* MessageCell.xib */; };
+		DBE49140261E02060073BE04 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DBE4913F261E02060073BE04 /* README.md */; };
 		F496F8C966F1AE99AA02A662 /* Pods_Tie_Up.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF1A7B364D4680356FB2811 /* Pods_Tie_Up.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		DBE49137261D77C50073BE04 /* message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = message.swift; sourceTree = SOURCE_ROOT; };
 		DBE4913A261D82BB0073BE04 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		DBE4913B261D82BB0073BE04 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		DBE4913F261E02060073BE04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		0B62816A235DEE8100E35CAF = {
 			isa = PBXGroup;
 			children = (
+				DBE4913F261E02060073BE04 /* README.md */,
 				0B628175235DEE8100E35CAF /* Flash Chat iOS13 */,
 				0B628174235DEE8100E35CAF /* Products */,
 				7BA78339D8C230BDBB30C0C7 /* Pods */,
@@ -196,6 +199,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBE49140261E02060073BE04 /* README.md in Resources */,
 				DBE4913D261D82BB0073BE04 /* MessageCell.xib in Resources */,
 				0B628183235DEE8400E35CAF /* LaunchScreen.storyboard in Resources */,
 				DB382CA7261451C000841DB8 /* GoogleService-Info.plist in Resources */,

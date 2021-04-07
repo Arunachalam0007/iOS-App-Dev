@@ -14,6 +14,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
+    let fireDB = Firestore.firestore()
+    
     var message: [Message] = [
         Message(sender: "sha@123", body: "Hi sha asdfasdfasdfs sdfasdfsadf safdasdf sadf asdfds af s asd fas dfs adf sdf sd"),
         Message(sender: "aru@123", body: "Hello aru"),
@@ -29,6 +31,21 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
+        
+        // Get SenderEmail and Message and add to Firestore
+        if let senderEmail = Auth.auth().currentUser?.email, let message = messageTextfield.text {
+            
+            var myFireDB: DocumentReference? = nil
+            // Add Data or Message into Firestore Cloud
+            myFireDB = fireDB.collection("Messages").addDocument(data: ["sender":senderEmail,"message":message]) { (error) in
+                if let e = error {
+                    print("Unable to Store your Data into FireStoreCloud: ",e)
+                } else {
+                    print("SuccessFully Stored Your Data and ID is: ",myFireDB!.documentID)
+                }
+            }
+        }
+        
         
     }
     
