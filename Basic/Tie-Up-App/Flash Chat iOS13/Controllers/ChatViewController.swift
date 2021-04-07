@@ -14,8 +14,16 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextfield: UITextField!
     
+    var message: [Message] = [
+        Message(sender: "sha@123", body: "Hi sha asdfasdfasdfs sdfasdfsadf safdasdf sadf asdfds af s asd fas dfs adf sdf sd"),
+        Message(sender: "aru@123", body: "Hello aru"),
+        Message(sender: "kalai@123", body: "AK")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        tableView.dataSource = self
         title = "🤳🏼 Tie_Up 🤳🏼"
         navigationItem.hidesBackButton = true
     }
@@ -32,5 +40,20 @@ class ChatViewController: UIViewController {
             print(signOutError)
         }
     }
+    
+}
+
+extension ChatViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        message.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! MessageCell
+        cell.messageLabel.text = message[indexPath.item].body
+        return cell
+    }
+    
     
 }
