@@ -45,3 +45,31 @@ fireDB.collection("Messages").getDocuments() { (querySnapshot, err) in
 }
 }
 
+6. addSnapShotListener: which is called the method frequently whenever the db got updated    // addSnapshotListener which is called the method frequently whenever the db got updated
+fireDB.collection("Messages").addSnapshotListener() { (querySnapshot, err) in
+    if let err = err {
+        print("Error getting documents: \(err)")
+    } else {
+        if let snapshotDocuments = querySnapshot?.documents {
+            // Make an empty of the Message Class object Array
+            self.message = []
+            for doc in snapshotDocuments {
+                let data = doc.data()
+                if let messageData = data["message"] as? String, let senderData = data["sender"] as? String {
+                    let messageObj = Message(sender: senderData, body: messageData)
+                    self.message.append(messageObj)
+                    
+                    print("Messages: ",messageObj)
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+}
+
+
+
