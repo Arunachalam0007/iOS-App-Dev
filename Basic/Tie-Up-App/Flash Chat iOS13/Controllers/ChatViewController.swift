@@ -23,8 +23,20 @@ class ChatViewController: UIViewController {
         loadFireStoreMessage()
         tableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         tableView.dataSource = self
-        title = "🤳🏼 Tie_Up 🤳🏼"
+        navTitleAnimate()
         navigationItem.hidesBackButton = true
+    }
+    
+    func navTitleAnimate() {
+        var charIndex = 0.0
+        let labelText = "🤳🏼Tie_Up🤳🏼"
+        title = ""
+        for text in labelText {
+            Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
+                self.title?.append(text)
+            }
+            charIndex += 1
+        }
     }
     
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -71,12 +83,11 @@ class ChatViewController: UIViewController {
                             let messageObj = Message(sender: senderData, body: messageData)
                             self.messages.append(messageObj)
                             
-                            print("Messages: ",messageObj)
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
                                 
                                 // scroll the row to top
-                                var indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
                                 self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                                 
                             }

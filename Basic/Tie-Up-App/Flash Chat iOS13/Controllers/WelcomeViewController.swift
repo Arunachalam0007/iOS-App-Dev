@@ -12,21 +12,28 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+        titleLabelAnimate()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        titleLabel.text = ""
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    func titleLabelAnimate() {
         var charIndex = 0.0
-        
         let labelText = "🤳🏼Tie_Up🤳🏼"
         titleLabel.text = ""
         for text in labelText {
-            Timer.scheduledTimer(withTimeInterval: 0.5 * charIndex, repeats: false) { (timer) in
+            Timer.scheduledTimer(withTimeInterval: 0.2 * charIndex, repeats: false) { (timer) in
                 self.titleLabel.text?.append(text)
             }
             charIndex += 1
         }
-       
     }
-    
 
 }
