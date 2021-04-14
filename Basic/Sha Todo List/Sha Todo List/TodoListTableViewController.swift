@@ -8,43 +8,48 @@
 import UIKit
 
 class TodoListTableViewController: UITableViewController {
-    
-    var todoListArrayNames =  ["AK","Arun","Kalai"]
-    
+        
     var toDoListItems = [TodoListItem]()
-
-    let filePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
+    
+    // find the file path which is return URL FilePath
+    let toDoPlistFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ToDoList.plist")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("Current File Path",filePath)
+        print("Current File Path",toDoPlistFilePath!)
         
-        //Initialise or add the default value to TodoListItems
+        //Decode Existing Plist data from file path and append to TableView
+        getDecodeToDoItems()
         
-        let todoItem1 = TodoListItem()
-        todoItem1.todoTitle = "WakeUp"
-        todoItem1.done = true
+        //        if let toDoListNames = UserDefaults.standard.array(forKey: "TodoListItemArray") as? [String]  {
+        //            toDoListItems = toDoListNames
+        //        }
+    }
+    
+    func getDecodeToDoItems() {
         
-        let todoItem2 = TodoListItem()
-        todoItem2.todoTitle = "Bath"
-        
-        let todoItem3 = TodoListItem()
-        todoItem3.todoTitle = "Standup"
-        todoItem3.done = true
-        
-        let todoItem4 = TodoListItem()
-        todoItem4.todoTitle = "iOS"
-        
-        toDoListItems.append(todoItem1)
-        toDoListItems.append(todoItem2)
-        toDoListItems.append(todoItem3)
-        toDoListItems.append(todoItem4)
-        
-//
-//        if let toDoListNames = UserDefaults.standard.array(forKey: "TodoListItemArray") as? [TodoListItem]  {
-//            toDoListItems = toDoListNames
-//        }
+        if let data = try? Data(contentsOf: toDoPlistFilePath!) {
+            
+            let decode = PropertyListDecoder()
+            do {
+                toDoListItems = try decode.decode([TodoListItem].self, from: data)
+            } catch  {
+                print("Error while encoding Data \(error)")
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    func writeEncodeToDoListItems() {
+        let encode = PropertyListEncoder()
+        do {
+            let data = try encode.encode(self.toDoListItems)
+            try data.write(to: self.toDoPlistFilePath!)
+        }catch{
+            print("Error while encoding Data \(error)")
+        }
+        tableView.reloadData()
     }
     
     
@@ -62,10 +67,8 @@ class TodoListTableViewController: UITableViewController {
                 self.toDoListItems.append(newToDoListItem)
                 
                 //Set TodoListItem array value into UserDefault
-                UserDefaults.standard.setValue(self.todoListArrayNames, forKey: "TodoListItemArray")
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                //  UserDefaults.standard.setValue(self.todoListArrayNames, forKey: "TodoListItemArray")
+                self.writeEncodeToDoListItems()
             }
             
         }
@@ -80,9 +83,9 @@ class TodoListTableViewController: UITableViewController {
         
     }
     
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         toDoListItems.count
     }
@@ -99,12 +102,10 @@ class TodoListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-      // let currentRow = tableView.cellForRow(at: indexPath)
+        // let currentRow = tableView.cellForRow(at: indexPath)
         
         toDoListItems[indexPath.item].done = !toDoListItems[indexPath.item].done
-        DispatchQueue.main.async {
-            tableView.reloadData()
-        }
+        writeEncodeToDoListItems()
         
     }
     
