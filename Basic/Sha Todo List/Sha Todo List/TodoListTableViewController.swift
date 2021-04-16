@@ -6,50 +6,31 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoListTableViewController: UITableViewController {
-        
-    var toDoListItems = [TodoListItem]()
     
+   // var todoListArrayNames =  ["AK","Arun","Kalai"]
+    
+    var toDoListItems = [ToDoListItem]()
+    
+    var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+
     // find the file path which is return URL FilePath
     let toDoPlistFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ToDoList.plist")
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Load CoreData from Persistant container or Database
+        fetchOrReadCoreDataToDoList()
+                
         print("Current File Path",toDoPlistFilePath!)
         
         //Decode Existing Plist data from file path and append to TableView
-        getDecodeToDoItems()
-        
-        //        if let toDoListNames = UserDefaults.standard.array(forKey: "TodoListItemArray") as? [String]  {
-        //            toDoListItems = toDoListNames
-        //        }
-    }
-    
-    func getDecodeToDoItems() {
-        
-        if let data = try? Data(contentsOf: toDoPlistFilePath!) {
-            
-            let decode = PropertyListDecoder()
-            do {
-                toDoListItems = try decode.decode([TodoListItem].self, from: data)
-            } catch  {
-                print("Error while encoding Data \(error)")
-            }
-        }
-        tableView.reloadData()
-    }
-    
-    func writeEncodeToDoListItems() {
-        let encode = PropertyListEncoder()
-        do {
-            let data = try encode.encode(self.toDoListItems)
-            try data.write(to: self.toDoPlistFilePath!)
-        }catch{
-            print("Error while encoding Data \(error)")
-        }
-        tableView.reloadData()
+       // getDecodeToDoItems()
+
     }
     
     
@@ -61,14 +42,16 @@ class TodoListTableViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Todos", style:.default) { (alertAction) in
             
             if let alertTxtF = alert.textFields, let toDoText = alertTxtF[0].text {
-                //Create TodoListItem class object and append to array
-                let newToDoListItem = TodoListItem()
+                
+                //Create TodoListItem CoreData class object and append to array
+                let newToDoListItem = ToDoListItem(context: self.context)
                 newToDoListItem.todoTitle = toDoText
                 self.toDoListItems.append(newToDoListItem)
                 
-                //Set TodoListItem array value into UserDefault
-                //  UserDefaults.standard.setValue(self.todoListArrayNames, forKey: "TodoListItemArray")
-                self.writeEncodeToDoListItems()
+                self.saveCoreDatToDoList()
+                
+ 
+                //self.writeEncodeToDoListItems()
             }
             
         }
@@ -84,8 +67,31 @@ class TodoListTableViewController: UITableViewController {
     }
     
     
-    // MARK: - Table view data source
+    func saveCoreDatToDoList(){
+        do {
+            try context.save()
+        } catch  {
+            print("Got Error While CoreData Context got Save : ",error)
+        }
+       tableView.reloadData()
+    }
     
+    func fetchOrReadCoreDataToDoList() {
+        
+        let fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()
+        
+        do {
+            self.toDoListItems = try context.fetch(fRequest)
+        } catch {
+            print("Error when Fetch the request from Core Data \(error)")
+        }
+        
+    }
+    
+    
+
+    // MARK: - Table view data source
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         toDoListItems.count
     }
@@ -100,14 +106,61 @@ class TodoListTableViewController: UITableViewController {
     // MARK: - Table View Delegate
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
-        // let currentRow = tableView.cellForRow(at: indexPath)
-        
+         
         toDoListItems[indexPath.item].done = !toDoListItems[indexPath.item].done
-        writeEncodeToDoListItems()
+
+        // Delete the NSManagedObject to persistant Data
+        // context.delete(toDoListItems[indexPath.row])
+        // toDoListItems.remove(at: indexPath.row)
+        
+        
+        // Update CoreData ToDoList
+        saveCoreDatToDoList()
+        
+        // Deslect the table row
+        tableView.deselectRow(at: indexPath, animated: true)
         
     }
     
     
 }
+
+
+
+
+
+
+
+//Set TodoListItem array value into UserDefault
+//  UserDefaults.standard.setValue(self.todoListArrayNames, forKey: "TodoListItemArray")
+
+//        if let toDoListNames = UserDefaults.standard.array(forKey: "TodoListItemArray") as? [String]  {
+//            toDoListItems = toDoListNames
+//        }
+
+
+//    func getDecodeToDoItems() {
+//
+//        if let data = try? Data(contentsOf: toDoPlistFilePath!) {
+//
+//            let decode = PropertyListDecoder()
+//            do {
+//                toDoListItems = try decode.decode([TodoListItem].self, from: data)
+//            } catch  {
+//                print("Error while encoding Data \(error)")
+//            }
+//        }
+//       tableView.reloadData()
+//    }
+//
+//    func writeEncodeToDoListItems() {
+//        let encode = PropertyListEncoder()
+//        do {
+//            let data = try encode.encode(self.toDoListItems)
+//            try data.write(to: self.toDoPlistFilePath!)
+//        }catch{
+//            print("Error while encoding Data \(error)")
+//        }
+//        tableView.reloadData()
+//    }
+//
