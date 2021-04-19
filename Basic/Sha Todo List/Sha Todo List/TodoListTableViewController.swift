@@ -23,6 +23,7 @@ class TodoListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //Load CoreData from Persistant container or Database
         fetchOrReadCoreDataToDoList()
                 
@@ -76,16 +77,16 @@ class TodoListTableViewController: UITableViewController {
        tableView.reloadData()
     }
     
-    func fetchOrReadCoreDataToDoList() {
+    // Fetch CoreData ToDoLitst with default Parameter value.
+    func fetchOrReadCoreDataToDoList(with fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()) {
         
-        let fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()
-        
+   
         do {
             self.toDoListItems = try context.fetch(fRequest)
         } catch {
             print("Error when Fetch the request from Core Data \(error)")
         }
-        
+        tableView.reloadData()
     }
     
     
@@ -122,6 +123,34 @@ class TodoListTableViewController: UITableViewController {
         
     }
     
+    
+}
+
+
+extension TodoListTableViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text!)
+        
+        let fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()
+        
+        // predicate is like Where Condition in Sql to make condition
+        fRequest.predicate =  NSPredicate(format: "todoTitle CONTAINS[cd] %@", searchBar.text!)
+       
+        // SortDescriptor is use to sort the key based on asc and desc
+        fRequest.sortDescriptors = [NSSortDescriptor(key: "todoTitle", ascending: true)]
+        
+        fetchOrReadCoreDataToDoList(with: fRequest)
+        
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.count == 0 {
+            DispatchQueue.main.async {
+                self.fetchOrReadCoreDataToDoList()
+            }
+        }
+    }
     
 }
 

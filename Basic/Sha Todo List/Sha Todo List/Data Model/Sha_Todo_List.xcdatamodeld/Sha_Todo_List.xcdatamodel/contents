@@ -5,6 +5,6 @@
         <attribute name="todoTitle" attributeType="String"/>
     </entity>
     <elements>
-        <element name="ToDoListItem" positionX="-63" positionY="-18" width="128" height="59"/>
+        <element name="ToDoListItem" positionX="-108.53515625" positionY="-997.578125" width="128" height="73"/>
     </elements>
 </model>
