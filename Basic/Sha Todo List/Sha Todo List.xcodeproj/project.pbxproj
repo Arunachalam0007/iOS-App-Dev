@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB7EB6F4262D67F300195DEB /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB7EB6F3262D67F300195DEB /* CategoryTableViewController.swift */; };
 		DBA36AE426243C51003E3781 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA36AE326243C51003E3781 /* AppDelegate.swift */; };
 		DBA36AE626243C51003E3781 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA36AE526243C51003E3781 /* SceneDelegate.swift */; };
 		DBA36AEB26243C51003E3781 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA36AE926243C51003E3781 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB7EB6F3262D67F300195DEB /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		DBA36AE026243C51003E3781 /* Sha Todo List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sha Todo List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA36AE326243C51003E3781 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DBA36AE526243C51003E3781 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				DBA36AE326243C51003E3781 /* AppDelegate.swift */,
 				DBA36AE526243C51003E3781 /* SceneDelegate.swift */,
 				DBA36AE926243C51003E3781 /* Main.storyboard */,
+				DB7EB6F3262D67F300195DEB /* CategoryTableViewController.swift */,
 				DBA36AFC26243E3F003E3781 /* TodoListTableViewController.swift */,
 				DBA36AEF26243C52003E3781 /* Assets.xcassets */,
 				DBA36AF126243C52003E3781 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				DBA36AE426243C51003E3781 /* AppDelegate.swift in Sources */,
 				DBA36AEE26243C51003E3781 /* Sha_Todo_List.xcdatamodeld in Sources */,
+				DB7EB6F4262D67F300195DEB /* CategoryTableViewController.swift in Sources */,
 				DBA36AE626243C51003E3781 /* SceneDelegate.swift in Sources */,
 				DBA36AFD26243E3F003E3781 /* TodoListTableViewController.swift in Sources */,
 			);
