@@ -12,17 +12,17 @@ class TodoListTableViewController: UITableViewController {
     
    // var todoListArrayNames =  ["AK","Arun","Kalai"]
     
-    var toDoListItems = [ToDoListItem]()
-    
+   // var toDoListItems = [ToDoListItem]()
+    var toDoListItems = [String]()
+
     var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-   // var parentToDOCategory:Category?
-    var parentCategory: ToDoCategory? {
-        didSet{
-            //Load CoreData from Persistant container or Database
-            fetchOrReadCoreDataToDoList()
-        }
-    }
+//    var parentCategory: ToDoCategory? {
+//        didSet{
+//            //Load CoreData from Persistant container or Database
+//            fetchOrReadCoreDataToDoList()
+//        }
+//    }
 
 
     // find the file path which is return URL FilePath
@@ -49,14 +49,14 @@ class TodoListTableViewController: UITableViewController {
             if let alertTxtF = alert.textFields, let toDoText = alertTxtF[0].text {
                 
                 //Create TodoListItem CoreData class object and append to array
-                let newToDoListItem = ToDoListItem(context: self.context)
-                newToDoListItem.todoTitle = toDoText
-                if let parentCategory = self.parentCategory {
-                    newToDoListItem.parentToDOCategory = parentCategory
-                }
-                self.toDoListItems.append(newToDoListItem)
-                
-                self.saveCoreDatToDoList()
+//                let newToDoListItem = ToDoListItem(context: self.context)
+//                newToDoListItem.todoTitle = toDoText
+//                if let parentCategory = self.parentCategory {
+//                    newToDoListItem.parentToDOCategory = parentCategory
+//                }
+//                self.toDoListItems.append(newToDoListItem)
+//
+//                self.saveCoreDatToDoList()
                 
                 
                 //self.writeEncodeToDoListItems()
@@ -85,24 +85,24 @@ class TodoListTableViewController: UITableViewController {
     }
     
     // Fetch CoreData ToDoLitst with default Parameter value.
-    func fetchOrReadCoreDataToDoList(with fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest(), searchPredicate: NSPredicate? = nil) {
-        if let searchPredicate = searchPredicate {
-            let CategoryPredicate = NSPredicate(format: "parentToDOCategory.name MATCHES[cd] %@", parentCategory!.name!)
-            let compondPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [CategoryPredicate, searchPredicate])
-            fRequest.predicate = compondPredicate
-        } else {
-            print("Search Predicate")
-            fRequest.predicate = NSPredicate(format: "parentToDOCategory.name MATCHES[cd] %@", parentCategory!.name!)
-        }
-   
-        do {
-            self.toDoListItems = try context.fetch(fRequest)
-           // print("Parent ToDO Id: ",self.toDoListItems[0].parentToDOCategory?.id)
-        } catch {
-            print("Error when Fetch the request from Core Data \(error)")
-        }
-        tableView.reloadData()
-    }
+//    func fetchOrReadCoreDataToDoList(with fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest(), searchPredicate: NSPredicate? = nil) {
+//        if let searchPredicate = searchPredicate {
+//            let CategoryPredicate = NSPredicate(format: "parentToDOCategory.name MATCHES[cd] %@", parentCategory!.name!)
+//            let compondPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [CategoryPredicate, searchPredicate])
+//            fRequest.predicate = compondPredicate
+//        } else {
+//            print("Search Predicate")
+//            fRequest.predicate = NSPredicate(format: "parentToDOCategory.name MATCHES[cd] %@", parentCategory!.name!)
+//        }
+//
+//        do {
+//            self.toDoListItems = try context.fetch(fRequest)
+//           // print("Parent ToDO Id: ",self.toDoListItems[0].parentToDOCategory?.id)
+//        } catch {
+//            print("Error when Fetch the request from Core Data \(error)")
+//        }
+//        tableView.reloadData()
+//    }
     
     
 
@@ -114,8 +114,8 @@ class TodoListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
-        cell.textLabel?.text = toDoListItems[indexPath.item].todoTitle
-        cell.accessoryType = toDoListItems[indexPath.item].done ? .checkmark : .none
+//        cell.textLabel?.text = toDoListItems[indexPath.item].todoTitle
+//        cell.accessoryType = toDoListItems[indexPath.item].done ? .checkmark : .none
         return cell
     }
     
@@ -123,7 +123,7 @@ class TodoListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          
-        toDoListItems[indexPath.item].done = !toDoListItems[indexPath.item].done
+     //   toDoListItems[indexPath.item].done = !toDoListItems[indexPath.item].done
 
         // Delete the NSManagedObject to persistant Data
         // context.delete(toDoListItems[indexPath.row])
@@ -146,22 +146,22 @@ extension TodoListTableViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        let fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()
-        
-        // predicate is like Where Condition in Sql to make condition
-        let predicate =  NSPredicate(format: "todoTitle CONTAINS[cd] %@", searchBar.text!)
-       
-        // SortDescriptor is use to sort the key based on asc and desc
-        fRequest.sortDescriptors = [NSSortDescriptor(key: "todoTitle", ascending: true)]
-        
-        fetchOrReadCoreDataToDoList(with: fRequest, searchPredicate: predicate)
+//        let fRequest: NSFetchRequest<ToDoListItem> = ToDoListItem.fetchRequest()
+//
+//        // predicate is like Where Condition in Sql to make condition
+//        let predicate =  NSPredicate(format: "todoTitle CONTAINS[cd] %@", searchBar.text!)
+//
+//        // SortDescriptor is use to sort the key based on asc and desc
+//        fRequest.sortDescriptors = [NSSortDescriptor(key: "todoTitle", ascending: true)]
+//
+//        fetchOrReadCoreDataToDoList(with: fRequest, searchPredicate: predicate)
         
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.count == 0 {
             DispatchQueue.main.async {
-                self.fetchOrReadCoreDataToDoList()
+   //             self.fetchOrReadCoreDataToDoList()
             }
         }
     }

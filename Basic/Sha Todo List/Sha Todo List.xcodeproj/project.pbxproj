@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -102,7 +102,6 @@
 				D83C09048F9780DB9BA9D41B /* Pods-Sha Todo List.debug.xcconfig */,
 				1AC26658401A19627BB3A533 /* Pods-Sha Todo List.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

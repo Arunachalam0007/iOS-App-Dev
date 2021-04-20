@@ -10,13 +10,13 @@ import CoreData
 
 class CategoryTableViewController: UITableViewController {
     
-    var toDoCategories = [ToDoCategory]()
+    var toDoCategories = [String]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ToDoList.plist")
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        readOrFetchCategoryToDoList()
+       // readOrFetchCategoryToDoList()
     }
     
     func saveCategoryToDoList() {
@@ -29,16 +29,16 @@ class CategoryTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    
-    func readOrFetchCategoryToDoList() {
-        let fetchReq: NSFetchRequest<ToDoCategory> = ToDoCategory.fetchRequest()
-        do {
-            toDoCategories = try context.fetch(fetchReq)
-        } catch {
-            print("Eroor while in fetch OR Read Context \(error)")
-        }
-        tableView.reloadData()
-    }
+//
+//    func readOrFetchCategoryToDoList() {
+//        let fetchReq: NSFetchRequest<ToDoCategory> = ToDoCategory.fetchRequest()
+//        do {
+//            toDoCategories = try context.fetch(fetchReq)
+//        } catch {
+//            print("Eroor while in fetch OR Read Context \(error)")
+//        }
+//        tableView.reloadData()
+//    }
     
     
     // MARK: - Table view data source
@@ -49,7 +49,7 @@ class CategoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
-        cell.textLabel?.text = toDoCategories[indexPath.row].name
+     //   cell.textLabel?.text = toDoCategories[indexPath.row].name
         return cell
     }
     
@@ -64,7 +64,7 @@ class CategoryTableViewController: UITableViewController {
         
         if let indexPath = tableView.indexPathForSelectedRow {
            let toDoCetegory = toDoCategories[indexPath.item]
-            toDoListTableVC.parentCategory = toDoCetegory
+         //   toDoListTableVC.parentCategory = toDoCetegory
         }
     }
     
@@ -75,9 +75,9 @@ class CategoryTableViewController: UITableViewController {
         let alertVC = UIAlertController(title: "Add Your TodoList Category", message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Add ToDos Category", style: .default) { (action) in
             if let alertTextFields = alertVC.textFields, let alertTextFValue = alertTextFields[0].text {
-                let toDoCategory = ToDoCategory(context: self.context)
-                toDoCategory.name = alertTextFValue
-                self.toDoCategories.append(toDoCategory)
+           //     let toDoCategory = ToDoCategory(context: self.context)
+             //   toDoCategory.name = alertTextFValue
+            //    self.toDoCategories.append(toDoCategory)
                 self.saveCategoryToDoList()
             }
         }
