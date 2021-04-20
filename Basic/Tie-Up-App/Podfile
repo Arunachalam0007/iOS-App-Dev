@@ -1,0 +1,13 @@
+platform :ios, '14.4'
+
+target 'Tie-Up' do
+  use_frameworks!
+
+  # Pods for Tie-Up
+  
+  pod 'CLTypingLabel'
+  
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+
+end
