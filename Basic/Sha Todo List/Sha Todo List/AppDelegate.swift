@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Path of the user default File
 //        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
-        
+        do {
+           let realm = try Realm()
+            print("Realm OBJECT GOT: ",realm)
+            
+        } catch  {
+            print("Error while getting Realm \(error)")
+        }
         return true
     }
 
