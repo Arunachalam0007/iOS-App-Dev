@@ -6,50 +6,49 @@
 //
 
 import UIKit
-import CoreData
+import RealmSwift
 
 class CategoryTableViewController: UITableViewController {
     
-    var toDoCategories = [String]()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("ToDoList.plist")
-    
+    var realm = try! Realm()
+    var toDoCategories: Results<ToDoCategory>?
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-       // readOrFetchCategoryToDoList()
+        readOrFeatchRealmData()
     }
     
-    func saveCategoryToDoList() {
+    // MARK: - Create ToDoCategory to Realm DB
+
+    func saveRealmData(toDoCategory: ToDoCategory) {
         do {
-            try context.save()
-            print("Categories Saved")
-        } catch{
-            print("Error while in Save Context \(error)")
+            try realm.write{
+                realm.add(toDoCategory)
+            }
+        } catch  {
+            print("Error While Saving Data to Realm \(error)")
         }
         tableView.reloadData()
     }
     
-//
-//    func readOrFetchCategoryToDoList() {
-//        let fetchReq: NSFetchRequest<ToDoCategory> = ToDoCategory.fetchRequest()
-//        do {
-//            toDoCategories = try context.fetch(fetchReq)
-//        } catch {
-//            print("Eroor while in fetch OR Read Context \(error)")
-//        }
-//        tableView.reloadData()
-//    }
+    // MARK: - Fetch or Read ToDoCategory from Realm DB
+
+    func readOrFeatchRealmData() {
+        // objects return Results<> Objects.
+        toDoCategories = realm.objects(ToDoCategory.self)
+    }
+    
     
     
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        toDoCategories.count
+        toDoCategories?.count ?? 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell",for: indexPath)
-     //   cell.textLabel?.text = toDoCategories[indexPath.row].name
+        cell.textLabel?.text = toDoCategories?[indexPath.row].name
         return cell
     }
     
@@ -59,26 +58,29 @@ class CategoryTableViewController: UITableViewController {
         performSegue(withIdentifier: "goToItems", sender: self)
     }
 
+    // MARK: - Passing ToDoCategory to TodoListTableViewController
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let toDoListTableVC = segue.destination as! TodoListTableViewController
         
         if let indexPath = tableView.indexPathForSelectedRow {
-           let toDoCetegory = toDoCategories[indexPath.item]
-         //   toDoListTableVC.parentCategory = toDoCetegory
+           let toDoCetegory = toDoCategories?[indexPath.item]
+            toDoListTableVC.parentCategory = toDoCetegory
         }
     }
     
     
-    
+    // MARK: - BarButton (Add ToDoCategory)
+
     @IBAction func addCategoryToDoList(_ sender: UIBarButtonItem) {
-        print("Bar Button Got Pressed")
         let alertVC = UIAlertController(title: "Add Your TodoList Category", message: nil, preferredStyle: .alert)
         let alertAction = UIAlertAction(title: "Add ToDos Category", style: .default) { (action) in
             if let alertTextFields = alertVC.textFields, let alertTextFValue = alertTextFields[0].text {
-           //     let toDoCategory = ToDoCategory(context: self.context)
-             //   toDoCategory.name = alertTextFValue
-            //    self.toDoCategories.append(toDoCategory)
-                self.saveCategoryToDoList()
+                if alertTextFValue.count > 0 {
+                    let toDoCategory = ToDoCategory()
+                    toDoCategory.name = alertTextFValue
+                    self.saveRealmData(toDoCategory: toDoCategory)
+                }
             }
         }
         alertVC.addTextField { (textFiled) in
