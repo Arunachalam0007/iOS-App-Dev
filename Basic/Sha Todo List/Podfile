@@ -7,4 +7,5 @@ target 'Sha Todo List' do
 
   # Pods for Sha Todo List
   pod 'RealmSwift'
+  pod 'SwipeCellKit'
 end
