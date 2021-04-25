@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListTableViewController: UITableViewController {
+class TodoListTableViewController: SwipeTableViewController {
     
     
     var toDoListItems: Results<ToDoListItem>?
@@ -22,6 +22,7 @@ class TodoListTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = 80
     }
     
     // MARK: - Fetch or Read ToDoList Item from Category Realm DB
@@ -75,6 +76,20 @@ class TodoListTableViewController: UITableViewController {
     
     
     
+    override func updateModel(at indexPath:IndexPath) {
+        if let selectedToDoItem = self.toDoListItems?[indexPath.row]{
+            do {
+                try self.realm.write{
+                    self.realm.delete(selectedToDoItem)
+                }
+            } catch  {
+                print("Error While Delete the ToDoCategory in REALM DB \(selectedToDoItem)")
+            }
+        }
+    }
+    
+    
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +97,7 @@ class TodoListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath)
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         cell.textLabel?.text = toDoListItems?[indexPath.item].todoTitle
         cell.accessoryType = (toDoListItems?[indexPath.item].done)! ? .checkmark : .none
         return cell
