@@ -17,24 +17,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersCell" textLabel="0FT-tQ-TLP" detailTextLabel="Unq-lo-I2i" rowHeight="102" style="IBUITableViewCellStyleSubtitle" id="M1U-Wc-C4m">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="102"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersCell" textLabel="0FT-tQ-TLP" detailTextLabel="Unq-lo-I2i" rowHeight="150" style="IBUITableViewCellStyleValue1" id="M1U-Wc-C4m">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M1U-Wc-C4m" id="Da1-7h-TUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0FT-tQ-TLP">
-                                            <rect key="frame" x="20" y="35" width="25" height="14.5"/>
+                                            <rect key="frame" x="20" y="53" width="75" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Unq-lo-I2i">
-                                            <rect key="frame" x="20" y="51.5" width="30.5" height="13.5"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Unq-lo-I2i">
+                                            <rect key="frame" x="310.5" y="55" width="83.5" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

@@ -16,7 +16,7 @@ enum CoffeeType: String,Codable {
 
 enum CoffeeSize: String,Codable {
     case Small
-    case Meidum
+    case Medium
     case Large
 }
 

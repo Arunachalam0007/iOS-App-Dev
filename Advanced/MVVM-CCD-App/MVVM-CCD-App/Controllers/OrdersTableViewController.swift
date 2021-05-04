@@ -19,24 +19,36 @@ class OrdersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.rowHeight = 100
         loadOrders()
     }
     
     func loadOrders() {
         print("Loaded")
+        
         guard let url = URL(string: "https://guarded-retreat-82533.herokuapp.com/orders") else {
             fatalError("Order URL is INCorrect")
             return
         }
-        OrderWebService().getOrders(url: url) { result in
+        
+        let resource = Resource<Order> (url: url)
+        
+        OrderWebService().getOrders(resource: resource) { result in
             switch result {
             case .success(let orders):
-                if let listOfOrders = orders as? [Order] {
-                    self.ordersVM = OrdersViewModel(orders: listOfOrders)
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
+
+                self.ordersVM = OrdersViewModel(orders: orders)
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
                 }
+            
+            //                if let listOfOrders = orders as? [Order] {
+            //                    self.ordersVM = OrdersViewModel(orders: orders)
+            //                    DispatchQueue.main.async {
+            //                        self.tableView.reloadData()
+            //                    }
+            //                }
+                
             case .failure(let error):
                 print("ERRORS",error)
             }

@@ -13,10 +13,14 @@ enum NetworkError: Error {
     case urlError
 }
 
+struct Resource<U: Codable> {
+    let url : URL
+}
+
 struct OrderWebService {
-    func getOrders(url:URL, completion: @escaping (Result<Any, NetworkError>) -> Void) {
+    func getOrders<T>(resource: Resource<T>, completion: @escaping (Result<[T], NetworkError>) -> Void) {
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
+        URLSession.shared.dataTask(with: resource.url) { data, response, error in
             
             guard let data = data, error == nil else {
                 completion(.failure(.domainError))
@@ -24,7 +28,7 @@ struct OrderWebService {
             }
             
             do{
-                let order = try JSONDecoder().decode([Order].self,from: data)
+                let order = try JSONDecoder().decode([T].self,from: data)
                 DispatchQueue.main.async {
                     completion(.success(order))
                 }
