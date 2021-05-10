@@ -39,3 +39,27 @@ struct OrderWebService {
         }.resume()
     }
 }
+
+//
+//func setOrders<T>(resource: Resource<T>, completion: @escaping (Result<[T], NetworkError>)-> Void) {
+//    var urlRequest = URLRequest(url: resource.url)
+//    let data = try? JSONEncoder().encode(resource.orderData)
+//    
+//    urlRequest.httpMethod = "POST"
+//    urlRequest.httpBody = data
+//    urlRequest.addValue( "application/json", forHTTPHeaderField: "Content-Type")
+//    
+//    URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+//        
+//        guard let data = data , error == nil else {
+//            completion(.failure(.domainError))
+//            return
+//        }
+//        
+//        let result = try? JSONDecoder().decode(T.self, from: data)
+//        print("Post Result ", result)
+//        
+//    }.resume()
+//    
+//}
+//}

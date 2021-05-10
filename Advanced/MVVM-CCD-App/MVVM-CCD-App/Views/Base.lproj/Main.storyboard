@@ -17,22 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersCell" textLabel="0FT-tQ-TLP" detailTextLabel="Unq-lo-I2i" rowHeight="150" style="IBUITableViewCellStyleValue1" id="M1U-Wc-C4m">
-                                <rect key="frame" x="0.0" y="24.5" width="414" height="150"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrdersCell" textLabel="0FT-tQ-TLP" detailTextLabel="Unq-lo-I2i" rowHeight="54" style="IBUITableViewCellStyleValue1" id="M1U-Wc-C4m">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="54"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M1U-Wc-C4m" id="Da1-7h-TUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0FT-tQ-TLP">
-                                            <rect key="frame" x="20" y="53" width="75" height="44.5"/>
+                                            <rect key="frame" x="20" y="5" width="75" height="44.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Unq-lo-I2i">
-                                            <rect key="frame" x="310.5" y="55" width="83.5" height="42"/>
+                                            <rect key="frame" x="310.5" y="7" width="83.5" height="42"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="35"/>
                                             <nil key="textColor"/>
@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" title="Orders" id="waY-dx-EBB">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="oD3-Lr-HNy">
                             <connections>
-                                <segue destination="3S9-ZA-mVB" kind="presentation" modalPresentationStyle="fullScreen" id="C9T-uN-5FD"/>
+                                <segue destination="3S9-ZA-mVB" kind="presentation" identifier="t" modalPresentationStyle="fullScreen" id="C9T-uN-5FD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,15 +71,19 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="387"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iRh-Fd-MKl">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CoffeeCell" rowHeight="106" id="iRh-Fd-MKl">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="106"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iRh-Fd-MKl" id="bGA-mi-voK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="106"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vrm-yS-cSD" id="FvF-BZ-6K3"/>
+                                    <outlet property="delegate" destination="vrm-yS-cSD" id="1HG-wq-7eF"/>
+                                </connections>
                             </tableView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iqf-A3-BRt">
                                 <rect key="frame" x="107" y="611" width="200" height="34"/>
@@ -97,22 +101,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ToV-Op-JL7">
-                                <rect key="frame" x="104" y="543" width="206" height="32"/>
-                                <segments>
-                                    <segment title="Small"/>
-                                    <segment title="Medium"/>
-                                    <segment title="Large"/>
-                                </segments>
-                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lRK-LK-ShY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ToV-Op-JL7" firstAttribute="top" secondItem="czv-bR-aF3" secondAttribute="bottom" constant="68" id="2hk-nY-tXc"/>
                             <constraint firstItem="Iqf-A3-BRt" firstAttribute="centerX" secondItem="oC6-Pl-0Tg" secondAttribute="centerX" id="7JY-br-4nq"/>
-                            <constraint firstItem="Iqf-A3-BRt" firstAttribute="top" secondItem="ToV-Op-JL7" secondAttribute="bottom" constant="37" id="82V-xX-eFL"/>
-                            <constraint firstItem="ToV-Op-JL7" firstAttribute="centerX" secondItem="oC6-Pl-0Tg" secondAttribute="centerX" id="OxN-qu-Zjv"/>
+                            <constraint firstItem="lRK-LK-ShY" firstAttribute="bottom" secondItem="eNn-tJ-iGZ" secondAttribute="bottom" constant="135" id="TGs-wN-sXu"/>
                             <constraint firstItem="eNn-tJ-iGZ" firstAttribute="top" secondItem="Iqf-A3-BRt" secondAttribute="bottom" constant="48" id="eTn-dV-YB9"/>
                             <constraint firstItem="eNn-tJ-iGZ" firstAttribute="centerX" secondItem="oC6-Pl-0Tg" secondAttribute="centerX" id="gaO-Bc-mid"/>
                             <constraint firstItem="lRK-LK-ShY" firstAttribute="trailing" secondItem="czv-bR-aF3" secondAttribute="trailing" id="l4Z-E8-A9Y"/>
@@ -122,13 +116,26 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add New  Order" id="Bge-nf-OUP">
-                        <barButtonItem key="leftBarButtonItem" title="Close" id="dPM-sN-ieU"/>
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="7mP-Qg-uiq"/>
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="dPM-sN-ieU">
+                            <connections>
+                                <action selector="closeBtnPressed:" destination="vrm-yS-cSD" id="D5Z-HH-5a6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="7mP-Qg-uiq">
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="vrm-yS-cSD" id="H3v-on-7hE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="coffeeTableView" destination="czv-bR-aF3" id="TPW-q3-thF"/>
+                        <outlet property="orderEmail" destination="eNn-tJ-iGZ" id="tUV-qY-g6f"/>
+                        <outlet property="orderName" destination="Iqf-A3-BRt" id="DPW-VX-uXX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzu-kv-b02" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2431.8840579710145" y="91.741071428571431"/>
+            <point key="canvasLocation" x="2430.434782608696" y="91.741071428571431"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qRy-kJ-AWf">
