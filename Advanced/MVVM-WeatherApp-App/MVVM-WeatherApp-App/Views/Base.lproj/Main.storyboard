@@ -12,12 +12,12 @@
         <scene sceneID="66X-Db-25k">
             <objects>
                 <tableViewController id="i80-pm-bJE" customClass="WeatherListTableViewController" customModule="MVVM_WeatherApp_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N3G-ow-f1V">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N3G-ow-f1V">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="100" id="PaE-gb-fkQ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherInfoCell" rowHeight="100" id="PaE-gb-fkQ">
                                 <rect key="frame" x="0.0" y="24.5" width="414" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PaE-gb-fkQ" id="iLi-J2-ORX">
@@ -35,7 +35,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="4zt-Ci-pdq"/>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="k5R-cy-Q5o">
                             <connections>
-                                <segue destination="gq0-Lm-LEY" kind="presentation" modalPresentationStyle="automatic" id="GfO-eb-ORC"/>
+                                <segue destination="gq0-Lm-LEY" kind="presentation" modalPresentationStyle="overFullScreen" id="GfO-eb-ORC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,12 +49,38 @@
             <objects>
                 <viewController id="ysU-cO-iGg" customClass="AddWeatherViewController" customModule="MVVM_WeatherApp_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SWr-fw-Q46">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IJq-mU-fmw">
+                                <rect key="frame" x="53" y="133" width="299" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-kw-Yze">
+                                <rect key="frame" x="164" y="197" width="86" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="searchCityWeather:" destination="ysU-cO-iGg" eventType="touchUpInside" id="dc8-Dp-6hP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AG3-jJ-Gnm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add City" id="UyM-jz-VLk"/>
+                    <navigationItem key="navigationItem" title="Add City" id="UyM-jz-VLk">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="pvN-Jp-eiJ">
+                            <connections>
+                                <action selector="closeBtnPressed:" destination="ysU-cO-iGg" id="yPC-bX-6dB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cityNameSearchTextField" destination="IJq-mU-fmw" id="JD4-Lf-ZAC"/>
+                        <outlet property="saveBtn" destination="GeJ-kw-Yze" id="VVh-e4-6Bd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKQ-9x-8Re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -84,7 +110,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gq0-Lm-LEY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="yJB-Qe-caP">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
