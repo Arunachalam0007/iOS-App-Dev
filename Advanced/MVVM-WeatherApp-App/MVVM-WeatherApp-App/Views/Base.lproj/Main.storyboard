@@ -31,7 +31,7 @@
                             <outlet property="delegate" destination="i80-pm-bJE" id="ti4-22-Fv0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="GoodWeather" largeTitleDisplayMode="always" id="oQF-h8-DuE">
+                    <navigationItem key="navigationItem" title="GoodWeather" id="oQF-h8-DuE">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="4zt-Ci-pdq"/>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="k5R-cy-Q5o">
                             <connections>

@@ -61,12 +61,12 @@
 		DB50050026490CB900A7E394 /* MVVM-WeatherApp-App */ = {
 			isa = PBXGroup;
 			children = (
+				DB5005172649191200A7E394 /* Views */,
+				DB50051A264920FA00A7E394 /* Controllers */,
 				DB50050126490CB900A7E394 /* AppDelegate.swift */,
 				DB50050326490CB900A7E394 /* SceneDelegate.swift */,
-				DB5005172649191200A7E394 /* Views */,
 				DB50050A26490CBB00A7E394 /* Assets.xcassets */,
 				DB50050F26490CBB00A7E394 /* Info.plist */,
-				DB50051A264920FA00A7E394 /* Controllers */,
 			);
 			path = "MVVM-WeatherApp-App";
 			sourceTree = "<group>";
