@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		DB50050226490CB900A7E394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50050126490CB900A7E394 /* AppDelegate.swift */; };
 		DB50050426490CB900A7E394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50050326490CB900A7E394 /* SceneDelegate.swift */; };
-		DB50050626490CB900A7E394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50050526490CB900A7E394 /* ViewController.swift */; };
 		DB50050926490CB900A7E394 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB50050726490CB900A7E394 /* Main.storyboard */; };
 		DB50050B26490CBB00A7E394 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB50050A26490CBB00A7E394 /* Assets.xcassets */; };
 		DB50050E26490CBB00A7E394 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB50050C26490CBB00A7E394 /* LaunchScreen.storyboard */; };
 		DB50051626490D3800A7E394 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB50051526490D3800A7E394 /* README.md */; };
+		DB50051926491EE700A7E394 /* WeatherListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50051826491EE700A7E394 /* WeatherListTableViewController.swift */; };
+		DB50051C2649211100A7E394 /* AddWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50051B2649211100A7E394 /* AddWeatherViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		DB5004FE26490CB900A7E394 /* MVVM-WeatherApp-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-WeatherApp-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB50050126490CB900A7E394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB50050326490CB900A7E394 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB50050526490CB900A7E394 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB50050826490CB900A7E394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB50050A26490CBB00A7E394 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB50050D26490CBB00A7E394 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB50050F26490CBB00A7E394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB50051526490D3800A7E394 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DB50051826491EE700A7E394 /* WeatherListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListTableViewController.swift; sourceTree = "<group>"; };
+		DB50051B2649211100A7E394 /* AddWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +63,30 @@
 			children = (
 				DB50050126490CB900A7E394 /* AppDelegate.swift */,
 				DB50050326490CB900A7E394 /* SceneDelegate.swift */,
-				DB50050526490CB900A7E394 /* ViewController.swift */,
-				DB50050726490CB900A7E394 /* Main.storyboard */,
+				DB5005172649191200A7E394 /* Views */,
 				DB50050A26490CBB00A7E394 /* Assets.xcassets */,
-				DB50050C26490CBB00A7E394 /* LaunchScreen.storyboard */,
 				DB50050F26490CBB00A7E394 /* Info.plist */,
+				DB50051A264920FA00A7E394 /* Controllers */,
 			);
 			path = "MVVM-WeatherApp-App";
+			sourceTree = "<group>";
+		};
+		DB5005172649191200A7E394 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB50050726490CB900A7E394 /* Main.storyboard */,
+				DB50050C26490CBB00A7E394 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DB50051A264920FA00A7E394 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DB50051826491EE700A7E394 /* WeatherListTableViewController.swift */,
+				DB50051B2649211100A7E394 /* AddWeatherViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,7 +160,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB50050626490CB900A7E394 /* ViewController.swift in Sources */,
+				DB50051926491EE700A7E394 /* WeatherListTableViewController.swift in Sources */,
+				DB50051C2649211100A7E394 /* AddWeatherViewController.swift in Sources */,
 				DB50050226490CB900A7E394 /* AppDelegate.swift in Sources */,
 				DB50050426490CB900A7E394 /* SceneDelegate.swift in Sources */,
 			);
