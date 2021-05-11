@@ -11,7 +11,7 @@ struct K {
     
     struct Urls {
        static func getWeatherMapURL(cityName:String)-> URL? {
-            let weatherMapURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=metric"
+            let weatherMapURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=imperial"
             return URL(string: weatherMapURL)
         }
     }

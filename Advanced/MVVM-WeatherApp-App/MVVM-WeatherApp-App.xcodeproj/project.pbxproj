@@ -22,6 +22,7 @@
 		DB5005292649640800A7E394 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5005282649640800A7E394 /* WeatherModel.swift */; };
 		DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */; };
 		DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */; };
+		DB500531264A67EB00A7E394 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500530264A67EB00A7E394 /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		DB5005282649640800A7E394 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherVIewModel.swift; sourceTree = "<group>"; };
 		DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
+		DB500530264A67EB00A7E394 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				DB50052A2649A26000A7E394 /* Utils */,
+				DB500532264A67EF00A7E394 /* Extensions */,
 				DB5005172649191200A7E394 /* Views */,
 				DB50052126493F3700A7E394 /* Cells */,
 				DB50051A264920FA00A7E394 /* Controllers */,
@@ -148,6 +151,14 @@
 				DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */,
 			);
 			path = "View Models";
+			sourceTree = "<group>";
+		};
+		DB500532264A67EF00A7E394 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DB500530264A67EB00A7E394 /* Double+Extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +242,7 @@
 				DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */,
 				DB5005292649640800A7E394 /* WeatherModel.swift in Sources */,
 				DB500523264943ED00A7E394 /* Constants.swift in Sources */,
+				DB500531264A67EB00A7E394 /* Double+Extensions.swift in Sources */,
 				DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

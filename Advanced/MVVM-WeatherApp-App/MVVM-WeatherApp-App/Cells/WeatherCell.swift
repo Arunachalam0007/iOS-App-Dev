@@ -11,6 +11,12 @@ class WeatherCell: UITableViewCell {
     
     @IBOutlet weak var cityNameLable: UILabel!
     @IBOutlet weak var temperatureLable: UILabel!
+    
+    
+    func setCellValue(vm: WeatherViewModel) {
+        cityNameLable.text =  vm.cityName
+        temperatureLable.text = vm.cityTemp?.formatAsDegree()
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

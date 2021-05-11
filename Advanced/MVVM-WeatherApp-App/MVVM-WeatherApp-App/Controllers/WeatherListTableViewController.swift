@@ -37,8 +37,7 @@ class WeatherListTableViewController: UITableViewController {
         
         let weatherVM = weatherListVM.weatherModelIndexAt(index: indexPath.row)
         
-        cell.cityNameLable.text = weatherVM.cityName
-        cell.temperatureLable.text = "\(weatherVM.cityTemp!)°C"
+        cell.setCellValue(vm: weatherVM)
         
         return cell
         
