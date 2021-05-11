@@ -18,6 +18,10 @@
 		DB50051F26493F3000A7E394 /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50051D26493F3000A7E394 /* WeatherCell.swift */; };
 		DB50052026493F3000A7E394 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB50051E26493F3000A7E394 /* WeatherCell.xib */; };
 		DB500523264943ED00A7E394 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500522264943ED00A7E394 /* Constants.swift */; };
+		DB5005252649582C00A7E394 /* WeatherWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5005242649582C00A7E394 /* WeatherWebService.swift */; };
+		DB5005292649640800A7E394 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB5005282649640800A7E394 /* WeatherModel.swift */; };
+		DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */; };
+		DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		DB50051D26493F3000A7E394 /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
 		DB50051E26493F3000A7E394 /* WeatherCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		DB500522264943ED00A7E394 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DB5005242649582C00A7E394 /* WeatherWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherWebService.swift; sourceTree = "<group>"; };
+		DB5005282649640800A7E394 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherVIewModel.swift; sourceTree = "<group>"; };
+		DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,14 +75,17 @@
 		DB50050026490CB900A7E394 /* MVVM-WeatherApp-App */ = {
 			isa = PBXGroup;
 			children = (
+				DB50052A2649A26000A7E394 /* Utils */,
 				DB5005172649191200A7E394 /* Views */,
 				DB50052126493F3700A7E394 /* Cells */,
 				DB50051A264920FA00A7E394 /* Controllers */,
+				DB50052B2649A62600A7E394 /* View Models */,
+				DB500527264963D900A7E394 /* Models */,
+				DB5005262649583000A7E394 /* Web Services */,
 				DB50050126490CB900A7E394 /* AppDelegate.swift */,
 				DB50050326490CB900A7E394 /* SceneDelegate.swift */,
 				DB50050A26490CBB00A7E394 /* Assets.xcassets */,
 				DB50050F26490CBB00A7E394 /* Info.plist */,
-				DB500522264943ED00A7E394 /* Constants.swift */,
 			);
 			path = "MVVM-WeatherApp-App";
 			sourceTree = "<group>";
@@ -104,6 +115,39 @@
 				DB50051E26493F3000A7E394 /* WeatherCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		DB5005262649583000A7E394 /* Web Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB5005242649582C00A7E394 /* WeatherWebService.swift */,
+			);
+			path = "Web Services";
+			sourceTree = "<group>";
+		};
+		DB500527264963D900A7E394 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB5005282649640800A7E394 /* WeatherModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB50052A2649A26000A7E394 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DB500522264943ED00A7E394 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DB50052B2649A62600A7E394 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */,
+				DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +225,13 @@
 				DB50051F26493F3000A7E394 /* WeatherCell.swift in Sources */,
 				DB50051926491EE700A7E394 /* WeatherListTableViewController.swift in Sources */,
 				DB50051C2649211100A7E394 /* AddWeatherViewController.swift in Sources */,
+				DB5005252649582C00A7E394 /* WeatherWebService.swift in Sources */,
 				DB50050226490CB900A7E394 /* AppDelegate.swift in Sources */,
 				DB50050426490CB900A7E394 /* SceneDelegate.swift in Sources */,
+				DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */,
+				DB5005292649640800A7E394 /* WeatherModel.swift in Sources */,
 				DB500523264943ED00A7E394 /* Constants.swift in Sources */,
+				DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

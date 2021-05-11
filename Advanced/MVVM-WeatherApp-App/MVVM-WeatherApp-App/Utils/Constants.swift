@@ -7,9 +7,14 @@
 
 import Foundation
 struct K {
-    static let cityName:String = "Chengalpattu"
     static let apiID:String = "3cc913675a5741818d6feaf11955e809"
-    static let weatherMapURL = "http://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=metric"
+    
+    struct Urls {
+       static func getWeatherMapURL(cityName:String)-> URL? {
+            let weatherMapURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=metric"
+            return URL(string: weatherMapURL)
+        }
+    }
     
     struct Weather {
         static let weatherCellIdentifier: String = "WeatherInfoCell"

@@ -8,6 +8,8 @@
 import UIKit
 
 class WeatherListTableViewController: UITableViewController {
+    
+    var weatherListVM = WeatherListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,6 +17,7 @@ class WeatherListTableViewController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UINib(nibName: K.Weather.weatherCellNibName, bundle: nil), forCellReuseIdentifier: K.Weather.weatherCellIdentifier)
     }
+
 
     // MARK: - Table view data source
 
@@ -25,18 +28,47 @@ class WeatherListTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return weatherListVM.listWeatherModels.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: K.Weather.weatherCellIdentifier, for: indexPath) as! WeatherCell
         
-        cell.cityNameLable.text = "Chennai"
-        cell.temperatureLable.text = "40°C"
+        let weatherVM = weatherListVM.weatherModelIndexAt(index: indexPath.row)
+        
+        cell.cityNameLable.text = weatherVM.cityName
+        cell.temperatureLable.text = "\(weatherVM.cityTemp!)°C"
         
         return cell
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        prepareSegueForAddWeatherCityVC(for: segue)
+    }
+    
+    func prepareSegueForAddWeatherCityVC(for segue: UIStoryboardSegue){
+        guard let navController = segue.destination as? UINavigationController else {
+            fatalError("UINavigationContoller is Not Found")
+        }
+        guard let addWeatherVC = navController.viewControllers.first as? AddWeatherViewController else {
+            fatalError("UIViewContoller is Not Found")
+        }
+        addWeatherVC.addWeatherDelegate = self
+    }
+    
+}
+
+extension WeatherListTableViewController : AddWeatherDelegate {
+    
+    func addWeatherDidSave(vm: WeatherViewModel) {
+        print("AddWeather Did Save VM: ",vm)
+        weatherListVM.appendWeatherViewModel(vm: vm)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
     
 }
