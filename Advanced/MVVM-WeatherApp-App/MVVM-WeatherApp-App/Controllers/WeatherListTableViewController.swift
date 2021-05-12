@@ -26,7 +26,6 @@ class WeatherListTableViewController: UITableViewController {
     
     func loadWeatherUnit () {
         if let wUnit = UserDefaults.standard.value(forKey: K.UnitUserDefaults.unitUserDefault) as? String {
-            print("Load Unit value", wUnit)
             weatherUnit = Unit(rawValue: wUnit)
         }
     }

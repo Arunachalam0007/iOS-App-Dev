@@ -13,6 +13,11 @@ import UIKit
 class AddWeatherViewController: UIViewController {
     
     @IBOutlet weak var cityNameSearchTextField: UITextField!
+    
+    @IBOutlet weak var countryNameSearchTextField: UITextField!
+    
+    @IBOutlet weak var zipCodeSearchTextField: UITextField!
+    
     @IBOutlet weak var saveBtn: UIButton!
     
     var addWeatherVM = AddWeatherViewModel()
@@ -20,9 +25,7 @@ class AddWeatherViewController: UIViewController {
     var addWeatherDelegate : AddWeatherDelegate?
 
     @IBAction func closeBtnPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true) {
-            print("Dismissed")
-        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func searchCityWeather(_ sender: UIButton) {

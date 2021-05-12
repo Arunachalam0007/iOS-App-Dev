@@ -97,8 +97,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your County" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S19-pz-L1j">
+                                <rect key="frame" x="53" y="204" width="299" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry your Zip Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YAb-T8-bmg">
+                                <rect key="frame" x="53" y="274" width="299" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeJ-kw-Yze">
-                                <rect key="frame" x="164" y="197" width="86" height="40"/>
+                                <rect key="frame" x="149" y="330" width="106" height="57"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -118,7 +130,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cityNameSearchTextField" destination="IJq-mU-fmw" id="JD4-Lf-ZAC"/>
+                        <outlet property="countryNameSearchTextField" destination="IJq-mU-fmw" id="HMP-Jr-8C2"/>
                         <outlet property="saveBtn" destination="GeJ-kw-Yze" id="VVh-e4-6Bd"/>
+                        <outlet property="zipCodeSearchTextField" destination="YAb-T8-bmg" id="VnC-mQ-IOB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKQ-9x-8Re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
