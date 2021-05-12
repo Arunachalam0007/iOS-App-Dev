@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol settingsUnitDelegate {
+    func setWeatherUnit(vm: SettingsViewModel)
+}
+
 enum Unit: String, CaseIterable {
     case celsius = "metric"
     case fahrenheit = "imperial"

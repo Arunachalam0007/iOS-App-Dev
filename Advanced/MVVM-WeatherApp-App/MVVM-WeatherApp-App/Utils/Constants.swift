@@ -11,7 +11,9 @@ struct K {
     
     struct Urls {
        static func getWeatherMapURL(cityName:String)-> URL? {
-            let weatherMapURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=imperial"
+        let userDefaultUnit = UserDefaults.standard.value(forKey: UnitUserDefaults.unitUserDefault) as? String
+            let weatherMapURL = "https://api.openweathermap.org/data/2.5/weather?q=\(cityName)&appid=\(apiID)&units=\(userDefaultUnit ?? "imperial")"
+        print(weatherMapURL)
             return URL(string: weatherMapURL)
         }
     }
@@ -23,5 +25,9 @@ struct K {
     
     struct Settings {
         static let settingsCellIdentifier: String = "SettingsUnitCell"
+    }
+    
+    struct UnitUserDefaults {
+        static let unitUserDefault = "SettingsSelectedUnit"
     }
 }

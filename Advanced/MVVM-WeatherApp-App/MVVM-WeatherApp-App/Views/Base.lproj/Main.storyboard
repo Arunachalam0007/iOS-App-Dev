@@ -69,7 +69,7 @@
                     <navigationItem key="navigationItem" title="GoodWeather" id="oQF-h8-DuE">
                         <barButtonItem key="leftBarButtonItem" title="Settings" id="4zt-Ci-pdq">
                             <connections>
-                                <segue destination="Sr8-xl-n0I" kind="show" id="BGJ-zb-T2X"/>
+                                <segue destination="Sr8-xl-n0I" kind="show" identifier="SettingsNav" id="BGJ-zb-T2X"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="k5R-cy-Q5o">

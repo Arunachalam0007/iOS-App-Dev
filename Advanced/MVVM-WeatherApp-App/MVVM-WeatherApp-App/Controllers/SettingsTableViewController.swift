@@ -10,6 +10,8 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     var settingsVM =  SettingsViewModel()
+    
+    var settingsDelegate : settingsUnitDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func saveBtnPressed () {
+        settingsDelegate?.setWeatherUnit(vm: settingsVM)
         self.dismiss(animated: true, completion: nil)
     }
 
