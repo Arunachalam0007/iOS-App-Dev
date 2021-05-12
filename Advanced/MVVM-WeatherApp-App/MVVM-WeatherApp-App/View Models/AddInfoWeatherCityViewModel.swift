@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class AddInfoWeatherCityViewModel {
+    var cityName: String = ""
+    var countryName: String = ""
+    var zipCode: String = ""
+}
