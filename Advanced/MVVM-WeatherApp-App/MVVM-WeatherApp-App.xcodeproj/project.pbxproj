@@ -23,6 +23,8 @@
 		DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */; };
 		DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */; };
 		DB500531264A67EB00A7E394 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500530264A67EB00A7E394 /* Double+Extensions.swift */; };
+		DB500534264A6C3500A7E394 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500533264A6C3500A7E394 /* SettingsTableViewController.swift */; };
+		DB500536264AB37400A7E394 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500535264AB37400A7E394 /* SettingsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWeatherVIewModel.swift; sourceTree = "<group>"; };
 		DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherListViewModel.swift; sourceTree = "<group>"; };
 		DB500530264A67EB00A7E394 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		DB500533264A6C3500A7E394 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		DB500535264AB37400A7E394 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 			children = (
 				DB50051826491EE700A7E394 /* WeatherListTableViewController.swift */,
 				DB50051B2649211100A7E394 /* AddWeatherViewController.swift */,
+				DB500533264A6C3500A7E394 /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			children = (
 				DB50052C2649A65C00A7E394 /* AddWeatherVIewModel.swift */,
 				DB50052E2649A6A400A7E394 /* WeatherListViewModel.swift */,
+				DB500535264AB37400A7E394 /* SettingsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -241,6 +247,8 @@
 				DB50050426490CB900A7E394 /* SceneDelegate.swift in Sources */,
 				DB50052D2649A65C00A7E394 /* AddWeatherVIewModel.swift in Sources */,
 				DB5005292649640800A7E394 /* WeatherModel.swift in Sources */,
+				DB500536264AB37400A7E394 /* SettingsViewModel.swift in Sources */,
+				DB500534264A6C3500A7E394 /* SettingsTableViewController.swift in Sources */,
 				DB500523264943ED00A7E394 /* Constants.swift in Sources */,
 				DB500531264A67EB00A7E394 /* Double+Extensions.swift in Sources */,
 				DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */,

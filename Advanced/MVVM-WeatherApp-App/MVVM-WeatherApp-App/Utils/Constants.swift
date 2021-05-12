@@ -20,4 +20,8 @@ struct K {
         static let weatherCellIdentifier: String = "WeatherInfoCell"
         static let weatherCellNibName: String = "WeatherCell"
     }
+    
+    struct Settings {
+        static let settingsCellIdentifier: String = "SettingsUnitCell"
+    }
 }
