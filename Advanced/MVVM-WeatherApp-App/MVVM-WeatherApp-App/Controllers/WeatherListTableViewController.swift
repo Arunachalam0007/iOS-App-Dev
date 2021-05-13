@@ -12,8 +12,9 @@ class WeatherListTableViewController: UITableViewController {
     var weatherListVM = WeatherListViewModel()
     
     var weatherUnit: Unit?
-    
-    var weatherDataSource : WeatherDataSource?
+        
+    var weatherDataSource: TableViewDataSource<WeatherCell,WeatherViewModel>?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,12 @@ class WeatherListTableViewController: UITableViewController {
         loadWeatherUnit()
     
         // assign the Table Datasouce to Custom Table DataSource class
-        weatherDataSource = WeatherDataSource(cellIdentifier: K.Weather.weatherCellIdentifier, weatherVM: weatherListVM)
+        
+        weatherDataSource = TableViewDataSource(cellIdentifier: K.Weather.weatherCellIdentifier, listVM: weatherListVM.listWeatherModels) {
+            cell, weatherVM in
+            cell.cityNameLable.text = weatherVM.cityName
+            cell.temperatureLable.text = weatherVM.cityTemp?.formatAsDegree()
+        }
         tableView.dataSource = weatherDataSource
     }
     
@@ -72,6 +78,8 @@ extension WeatherListTableViewController : AddWeatherDelegate {
     func addWeatherDidSave(vm: WeatherViewModel) {
         print("AddWeather Did Save VM: ",vm)
         weatherListVM.appendWeatherViewModel(vm: vm)
+        // UpdateVM in DS for added VM
+        weatherDataSource?.updateListVM(listVM: weatherListVM.listWeatherModels)
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }

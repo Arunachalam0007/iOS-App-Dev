@@ -28,6 +28,7 @@
 		DB500538264BEB6000A7E394 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500537264BEB6000A7E394 /* BindingTextField.swift */; };
 		DB50053B264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */; };
 		DB50053E264D36D000A7E394 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053D264D36D000A7E394 /* WeatherDataSource.swift */; };
+		DB500540264D878300A7E394 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053F264D878300A7E394 /* TableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		DB500537264BEB6000A7E394 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
 		DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoWeatherCityViewModel.swift; sourceTree = "<group>"; };
 		DB50053D264D36D000A7E394 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
+		DB50053F264D878300A7E394 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				DB50053D264D36D000A7E394 /* WeatherDataSource.swift */,
+				DB50053F264D878300A7E394 /* TableViewDataSource.swift */,
 			);
 			path = "Data Sources";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				DB50051F26493F3000A7E394 /* WeatherCell.swift in Sources */,
 				DB50051926491EE700A7E394 /* WeatherListTableViewController.swift in Sources */,
+				DB500540264D878300A7E394 /* TableViewDataSource.swift in Sources */,
 				DB50051C2649211100A7E394 /* AddWeatherViewController.swift in Sources */,
 				DB5005252649582C00A7E394 /* WeatherWebService.swift in Sources */,
 				DB50050226490CB900A7E394 /* AppDelegate.swift in Sources */,
