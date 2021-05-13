@@ -12,6 +12,8 @@ class WeatherListTableViewController: UITableViewController {
     var weatherListVM = WeatherListViewModel()
     
     var weatherUnit: Unit?
+    
+    var weatherDataSource : WeatherDataSource?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,12 @@ class WeatherListTableViewController: UITableViewController {
         // Registering XIB cell to tableview
         tableView.register(UINib(nibName: K.Weather.weatherCellNibName, bundle: nil), forCellReuseIdentifier: K.Weather.weatherCellIdentifier)
         
+        // loadind Weather Unit from Persistant Data (UserDefaults)
         loadWeatherUnit()
+    
+        // assign the Table Datasouce to Custom Table DataSource class
+        weatherDataSource = WeatherDataSource(cellIdentifier: K.Weather.weatherCellIdentifier, weatherVM: weatherListVM)
+        tableView.dataSource = weatherDataSource
     }
     
     func loadWeatherUnit () {
@@ -30,30 +37,6 @@ class WeatherListTableViewController: UITableViewController {
         }
     }
 
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return weatherListVM.listWeatherModels.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: K.Weather.weatherCellIdentifier, for: indexPath) as! WeatherCell
-        
-        let weatherVM = weatherListVM.weatherModelIndexAt(index: indexPath.row)
-        
-        cell.setCellValue(vm: weatherVM)
-        
-        return cell
-        
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "AddWeatherNav" {

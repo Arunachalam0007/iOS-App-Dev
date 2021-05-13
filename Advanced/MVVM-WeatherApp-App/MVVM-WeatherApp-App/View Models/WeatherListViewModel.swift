@@ -8,7 +8,7 @@
 import Foundation
 
 class WeatherListViewModel  {
-    var listWeatherModels = [WeatherViewModel]()
+    private(set) var listWeatherModels = [WeatherViewModel]()
     
     func appendWeatherViewModel(vm: WeatherViewModel) {
         listWeatherModels.append(vm)

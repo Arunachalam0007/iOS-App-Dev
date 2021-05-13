@@ -27,6 +27,7 @@
 		DB500536264AB37400A7E394 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500535264AB37400A7E394 /* SettingsViewModel.swift */; };
 		DB500538264BEB6000A7E394 /* BindingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB500537264BEB6000A7E394 /* BindingTextField.swift */; };
 		DB50053B264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */; };
+		DB50053E264D36D000A7E394 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053D264D36D000A7E394 /* WeatherDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		DB500535264AB37400A7E394 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		DB500537264BEB6000A7E394 /* BindingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingTextField.swift; sourceTree = "<group>"; };
 		DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoWeatherCityViewModel.swift; sourceTree = "<group>"; };
+		DB50053D264D36D000A7E394 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		DB50050026490CB900A7E394 /* MVVM-WeatherApp-App */ = {
 			isa = PBXGroup;
 			children = (
+				DB50053C264D013D00A7E394 /* Data Sources */,
 				DB500539264BEB7100A7E394 /* Custom Controlls */,
 				DB50052A2649A26000A7E394 /* Utils */,
 				DB500532264A67EF00A7E394 /* Extensions */,
@@ -181,6 +184,14 @@
 			path = "Custom Controlls";
 			sourceTree = "<group>";
 		};
+		DB50053C264D013D00A7E394 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				DB50053D264D36D000A7E394 /* WeatherDataSource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -266,6 +277,7 @@
 				DB50053B264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift in Sources */,
 				DB500534264A6C3500A7E394 /* SettingsTableViewController.swift in Sources */,
 				DB500523264943ED00A7E394 /* Constants.swift in Sources */,
+				DB50053E264D36D000A7E394 /* WeatherDataSource.swift in Sources */,
 				DB500531264A67EB00A7E394 /* Double+Extensions.swift in Sources */,
 				DB50052F2649A6A400A7E394 /* WeatherListViewModel.swift in Sources */,
 			);
