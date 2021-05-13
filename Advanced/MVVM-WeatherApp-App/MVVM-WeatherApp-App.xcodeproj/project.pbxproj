@@ -29,7 +29,18 @@
 		DB50053B264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */; };
 		DB50053E264D36D000A7E394 /* WeatherDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053D264D36D000A7E394 /* WeatherDataSource.swift */; };
 		DB500540264D878300A7E394 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50053F264D878300A7E394 /* TableViewDataSource.swift */; };
+		DB500550264DBB2D00A7E394 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB50054F264DBB2D00A7E394 /* SettingsViewModelTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB50054A264DBAE800A7E394 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB5004F626490CB900A7E394 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB5004FD26490CB900A7E394;
+			remoteInfo = "MVVM-WeatherApp-App";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		DB5004FE26490CB900A7E394 /* MVVM-WeatherApp-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-WeatherApp-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,10 +67,20 @@
 		DB50053A264BFA9100A7E394 /* AddInfoWeatherCityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddInfoWeatherCityViewModel.swift; sourceTree = "<group>"; };
 		DB50053D264D36D000A7E394 /* WeatherDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataSource.swift; sourceTree = "<group>"; };
 		DB50053F264D878300A7E394 /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		DB500545264DBAE800A7E394 /* MVVM-WeatherApp-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MVVM-WeatherApp-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB500549264DBAE800A7E394 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB50054F264DBB2D00A7E394 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB5004FB26490CB900A7E394 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB500542264DBAE800A7E394 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,6 +95,7 @@
 			children = (
 				DB50051526490D3800A7E394 /* README.md */,
 				DB50050026490CB900A7E394 /* MVVM-WeatherApp-App */,
+				DB500546264DBAE800A7E394 /* MVVM-WeatherApp-AppTests */,
 				DB5004FF26490CB900A7E394 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				DB5004FE26490CB900A7E394 /* MVVM-WeatherApp-App.app */,
+				DB500545264DBAE800A7E394 /* MVVM-WeatherApp-AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,6 +218,15 @@
 			path = "Data Sources";
 			sourceTree = "<group>";
 		};
+		DB500546264DBAE800A7E394 /* MVVM-WeatherApp-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB500549264DBAE800A7E394 /* Info.plist */,
+				DB50054F264DBB2D00A7E394 /* SettingsViewModelTests.swift */,
+			);
+			path = "MVVM-WeatherApp-AppTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -215,6 +247,24 @@
 			productReference = DB5004FE26490CB900A7E394 /* MVVM-WeatherApp-App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DB500544264DBAE800A7E394 /* MVVM-WeatherApp-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB50054C264DBAE800A7E394 /* Build configuration list for PBXNativeTarget "MVVM-WeatherApp-AppTests" */;
+			buildPhases = (
+				DB500541264DBAE800A7E394 /* Sources */,
+				DB500542264DBAE800A7E394 /* Frameworks */,
+				DB500543264DBAE800A7E394 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB50054B264DBAE800A7E394 /* PBXTargetDependency */,
+			);
+			name = "MVVM-WeatherApp-AppTests";
+			productName = "MVVM-WeatherApp-AppTests";
+			productReference = DB500545264DBAE800A7E394 /* MVVM-WeatherApp-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -226,6 +276,10 @@
 				TargetAttributes = {
 					DB5004FD26490CB900A7E394 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					DB500544264DBAE800A7E394 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = DB5004FD26490CB900A7E394;
 					};
 				};
 			};
@@ -243,6 +297,7 @@
 			projectRoot = "";
 			targets = (
 				DB5004FD26490CB900A7E394 /* MVVM-WeatherApp-App */,
+				DB500544264DBAE800A7E394 /* MVVM-WeatherApp-AppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +312,13 @@
 				DB50052026493F3000A7E394 /* WeatherCell.xib in Resources */,
 				DB50051626490D3800A7E394 /* README.md in Resources */,
 				DB50050926490CB900A7E394 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB500543264DBAE800A7E394 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +349,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DB500541264DBAE800A7E394 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB500550264DBB2D00A7E394 /* SettingsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB50054B264DBAE800A7E394 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB5004FD26490CB900A7E394 /* MVVM-WeatherApp-App */;
+			targetProxy = DB50054A264DBAE800A7E394 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DB50050726490CB900A7E394 /* Main.storyboard */ = {
@@ -463,6 +541,46 @@
 			};
 			name = Release;
 		};
+		DB50054D264DBAE800A7E394 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RY75X5YM8;
+				INFOPLIST_FILE = "MVVM-WeatherApp-AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.akchan.MVVM-WeatherApp-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-WeatherApp-App.app/MVVM-WeatherApp-App";
+			};
+			name = Debug;
+		};
+		DB50054E264DBAE800A7E394 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4RY75X5YM8;
+				INFOPLIST_FILE = "MVVM-WeatherApp-AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "co.akchan.MVVM-WeatherApp-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MVVM-WeatherApp-App.app/MVVM-WeatherApp-App";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -480,6 +598,15 @@
 			buildConfigurations = (
 				DB50051326490CBB00A7E394 /* Debug */,
 				DB50051426490CBB00A7E394 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB50054C264DBAE800A7E394 /* Build configuration list for PBXNativeTarget "MVVM-WeatherApp-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB50054D264DBAE800A7E394 /* Debug */,
+				DB50054E264DBAE800A7E394 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

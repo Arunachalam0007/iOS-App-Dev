@@ -39,7 +39,7 @@ class SettingsViewModel{
         }
         get {
             let settingsUnit = UserDefaults.standard.value(forKey: "SettingsSelectedUnit")
-            return Unit(rawValue: settingsUnit as! String)!
+            return Unit(rawValue: settingsUnit as? String ?? "metric")!
         }
     }
 }
