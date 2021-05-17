@@ -11,6 +11,10 @@
 		DB918BA72652BBF20099D5D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918BA62652BBF20099D5D2 /* ContentView.swift */; };
 		DB918BA92652BBF40099D5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB918BA82652BBF40099D5D2 /* Assets.xcassets */; };
 		DB918BAC2652BBF40099D5D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB918BAB2652BBF40099D5D2 /* Preview Assets.xcassets */; };
+		DB918BB52652DD210099D5D2 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918BB42652DD210099D5D2 /* NewsModel.swift */; };
+		DB918BB92652DF650099D5D2 /* NewsWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918BB82652DF650099D5D2 /* NewsWebService.swift */; };
+		DB918BBC2652E3540099D5D2 /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918BBB2652E3540099D5D2 /* NewsListViewModel.swift */; };
+		DB918BBE2652FE750099D5D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB918BBD2652FE750099D5D2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		DB918BA82652BBF40099D5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB918BAB2652BBF40099D5D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB918BAD2652BBF40099D5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB918BB42652DD210099D5D2 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		DB918BB82652DF650099D5D2 /* NewsWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWebService.swift; sourceTree = "<group>"; };
+		DB918BBB2652E3540099D5D2 /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		DB918BBD2652FE750099D5D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +44,7 @@
 		DB918B982652BBF20099D5D2 = {
 			isa = PBXGroup;
 			children = (
+				DB918BBD2652FE750099D5D2 /* README.md */,
 				DB918BA32652BBF20099D5D2 /* ShaNews-App */,
 				DB918BA22652BBF20099D5D2 /* Products */,
 			);
@@ -53,6 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				DB918BA42652BBF20099D5D2 /* ShaNews_AppApp.swift */,
+				DB918BB72652DF1A0099D5D2 /* Web Services */,
+				DB918BB62652DF090099D5D2 /* Models */,
+				DB918BBA2652E3040099D5D2 /* View Models */,
 				DB918BB32652DBC00099D5D2 /* Views */,
 				DB918BA82652BBF40099D5D2 /* Assets.xcassets */,
 				DB918BAD2652BBF40099D5D2 /* Info.plist */,
@@ -75,6 +87,30 @@
 				DB918BA62652BBF20099D5D2 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DB918BB62652DF090099D5D2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB918BB42652DD210099D5D2 /* NewsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DB918BB72652DF1A0099D5D2 /* Web Services */ = {
+			isa = PBXGroup;
+			children = (
+				DB918BB82652DF650099D5D2 /* NewsWebService.swift */,
+			);
+			path = "Web Services";
+			sourceTree = "<group>";
+		};
+		DB918BBA2652E3040099D5D2 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				DB918BBB2652E3540099D5D2 /* NewsListViewModel.swift */,
+			);
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB918BBE2652FE750099D5D2 /* README.md in Resources */,
 				DB918BAC2652BBF40099D5D2 /* Preview Assets.xcassets in Resources */,
 				DB918BA92652BBF40099D5D2 /* Assets.xcassets in Resources */,
 			);
@@ -148,6 +185,9 @@
 			files = (
 				DB918BA72652BBF20099D5D2 /* ContentView.swift in Sources */,
 				DB918BA52652BBF20099D5D2 /* ShaNews_AppApp.swift in Sources */,
+				DB918BBC2652E3540099D5D2 /* NewsListViewModel.swift in Sources */,
+				DB918BB52652DD210099D5D2 /* NewsModel.swift in Sources */,
+				DB918BB92652DF650099D5D2 /* NewsWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

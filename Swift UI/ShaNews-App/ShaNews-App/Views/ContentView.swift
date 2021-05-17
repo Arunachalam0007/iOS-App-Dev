@@ -8,37 +8,37 @@
 import SwiftUI
 
 struct ContentView: View {
+   @ObservedObject var newsListVm = NewsListViewModel()
     var body: some View {
-       
+        
         NavigationView{
-            List(newsData){ newsData in
-                Text(newsData.newsTitle)
+        
+            List(newsListVm.newsListViewModel){ newsModelData in
+
+                VStack {
+                    if let newsTitle = newsModelData.title {
+                        Text(newsTitle)
+                            .bold()
+                    }
+                    Spacer()
+                    if let description = newsModelData.description {
+                        Text(description)
+                    }
+                }
+                
             }
             .navigationTitle("Sha News App")
 
+        }
+        
+        // ViewDidLoad like UIKIT
+        .onAppear{
+            newsListVm.getNewsData()
         }
 
         
     }
 }
-
-//Identifiable is used to order based on Id Value and Iterate
-struct NewsModel: Identifiable {
-    var id: Int
-    var newsTitle: String
-}
-
-let newsData = [
-    NewsModel(id: 1, newsTitle: "Heading"),
-    NewsModel(id: 2, newsTitle: "Flash News"),
-
-    NewsModel(id: 3, newsTitle: "Cricket NEWS"),
-    NewsModel(id: 4, newsTitle: "Movies News")
-
-
-]
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
