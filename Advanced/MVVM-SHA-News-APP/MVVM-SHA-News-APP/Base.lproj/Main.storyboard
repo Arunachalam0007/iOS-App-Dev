@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8p-BE-ZZw">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sha MVVM News App-->
+        <scene sceneID="XPg-6F-asU">
+            <objects>
+                <tableViewController id="qdU-XJ-YGY" customClass="NewsTableViewController" customModule="MVVM_SHA_News_APP" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mmc-f6-maz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewsCell" id="NYW-hs-JPm" customClass="NewsTableViewCell" customModule="MVVM_SHA_News_APP" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="24.5" width="414" height="167.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NYW-hs-JPm" id="oxN-dH-cAR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="167.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="6jL-qj-4rz">
+                                            <rect key="frame" x="20" y="11" width="374" height="145.5"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oml-b8-lwG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="72"/>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ul9-Va-PWL">
+                                                    <rect key="frame" x="0.0" y="74" width="374" height="71.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huQ-RG-gYw">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="20.5" id="vfG-zm-jue"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3U-yr-dfQ">
+                                                            <rect key="frame" x="0.0" y="22.5" width="374" height="49"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Ul9-Va-PWL" firstAttribute="leading" secondItem="6jL-qj-4rz" secondAttribute="leading" id="43L-E5-afZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="Ul9-Va-PWL" secondAttribute="trailing" id="BaY-qm-6xd"/>
+                                                <constraint firstAttribute="trailing" secondItem="oml-b8-lwG" secondAttribute="trailing" id="Tnd-TI-SAm"/>
+                                                <constraint firstItem="oml-b8-lwG" firstAttribute="leading" secondItem="6jL-qj-4rz" secondAttribute="leading" id="aMa-2S-JLI"/>
+                                                <constraint firstAttribute="bottom" secondItem="Ul9-Va-PWL" secondAttribute="bottom" id="cQJ-TX-T1W"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6jL-qj-4rz" firstAttribute="leading" secondItem="oxN-dH-cAR" secondAttribute="leadingMargin" id="DDG-gc-QT7"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="6jL-qj-4rz" secondAttribute="trailing" id="dd0-dc-fhy"/>
+                                        <constraint firstItem="6jL-qj-4rz" firstAttribute="top" secondItem="oxN-dH-cAR" secondAttribute="topMargin" id="nhD-Ly-2Ql"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="6jL-qj-4rz" secondAttribute="bottom" id="tZl-l5-Z2l"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="newsDescription" destination="p3U-yr-dfQ" id="077-zw-dbD"/>
+                                    <outlet property="newsImage" destination="oml-b8-lwG" id="LvL-en-GBY"/>
+                                    <outlet property="newsTitle" destination="huQ-RG-gYw" id="rPD-zs-jDa"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qdU-XJ-YGY" id="1J7-hy-YQo"/>
+                            <outlet property="delegate" destination="qdU-XJ-YGY" id="UmX-ca-suE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sha MVVM News App" id="d9h-M1-DUK"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7S-cQ-veO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="786.95652173913049" y="-1.3392857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="V9h-Wi-ecq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C8p-BE-ZZw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q0y-I4-HcZ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qdU-XJ-YGY" kind="relationship" relationship="rootViewController" id="PsQ-uk-65F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXS-5k-Izz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-123.18840579710145" y="-1.3392857142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
