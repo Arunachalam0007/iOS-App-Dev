@@ -11,6 +11,8 @@
 		DB918B8726528D160099D5D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918B8626528D160099D5D2 /* ContentView.swift */; };
 		DB918B8926528D180099D5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB918B8826528D180099D5D2 /* Assets.xcassets */; };
 		DB918B8C26528D180099D5D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB918B8B26528D180099D5D2 /* Preview Assets.xcassets */; };
+		DB918B95265299E50099D5D2 /* DiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB918B94265299E50099D5D2 /* DiceView.swift */; };
+		DB918B9726529AA50099D5D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DB918B9626529AA50099D5D2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		DB918B8826528D180099D5D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB918B8B26528D180099D5D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB918B8D26528D180099D5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB918B94265299E50099D5D2 /* DiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceView.swift; sourceTree = "<group>"; };
+		DB918B9626529AA50099D5D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 		DB918B7826528D160099D5D2 = {
 			isa = PBXGroup;
 			children = (
+				DB918B9626529AA50099D5D2 /* README.md */,
 				DB918B8326528D160099D5D2 /* Dicee-App */,
 				DB918B8226528D160099D5D2 /* Products */,
 			);
@@ -53,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				DB918B8426528D160099D5D2 /* Dicee_AppApp.swift */,
-				DB918B8626528D160099D5D2 /* ContentView.swift */,
+				DB918B93265299D70099D5D2 /* Viwes */,
 				DB918B8826528D180099D5D2 /* Assets.xcassets */,
 				DB918B8D26528D180099D5D2 /* Info.plist */,
 				DB918B8A26528D180099D5D2 /* Preview Content */,
@@ -67,6 +72,15 @@
 				DB918B8B26528D180099D5D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB918B93265299D70099D5D2 /* Viwes */ = {
+			isa = PBXGroup;
+			children = (
+				DB918B8626528D160099D5D2 /* ContentView.swift */,
+				DB918B94265299E50099D5D2 /* DiceView.swift */,
+			);
+			path = Viwes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB918B9726529AA50099D5D2 /* README.md in Resources */,
 				DB918B8C26528D180099D5D2 /* Preview Assets.xcassets in Resources */,
 				DB918B8926528D180099D5D2 /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB918B8726528D160099D5D2 /* ContentView.swift in Sources */,
+				DB918B95265299E50099D5D2 /* DiceView.swift in Sources */,
 				DB918B8526528D160099D5D2 /* Dicee_AppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
