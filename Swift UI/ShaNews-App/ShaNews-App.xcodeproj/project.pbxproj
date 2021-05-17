@@ -53,7 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				DB918BA42652BBF20099D5D2 /* ShaNews_AppApp.swift */,
-				DB918BA62652BBF20099D5D2 /* ContentView.swift */,
+				DB918BB32652DBC00099D5D2 /* Views */,
 				DB918BA82652BBF40099D5D2 /* Assets.xcassets */,
 				DB918BAD2652BBF40099D5D2 /* Info.plist */,
 				DB918BAA2652BBF40099D5D2 /* Preview Content */,
@@ -67,6 +67,14 @@
 				DB918BAB2652BBF40099D5D2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB918BB32652DBC00099D5D2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB918BA62652BBF20099D5D2 /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
