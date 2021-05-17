@@ -11,6 +11,7 @@
 		DB9E5F9B2652767200CB246A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E5F9A2652767200CB246A /* ContentView.swift */; };
 		DB9E5F9D2652767400CB246A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9E5F9C2652767400CB246A /* Assets.xcassets */; };
 		DB9E5FA02652767400CB246A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9E5F9F2652767400CB246A /* Preview Assets.xcassets */; };
+		DB9E5FA826527E8900CB246A /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9E5FA726527E8900CB246A /* InfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		DB9E5F9C2652767400CB246A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB9E5F9F2652767400CB246A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DB9E5FA12652767400CB246A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9E5FA726527E8900CB246A /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				DB9E5F982652767200CB246A /* Sha_BusinessCardApp.swift */,
-				DB9E5F9A2652767200CB246A /* ContentView.swift */,
+				DB9E5FA926527EFD00CB246A /* Views */,
 				DB9E5F9C2652767400CB246A /* Assets.xcassets */,
 				DB9E5FA12652767400CB246A /* Info.plist */,
 				DB9E5F9E2652767400CB246A /* Preview Content */,
@@ -67,6 +69,15 @@
 				DB9E5F9F2652767400CB246A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DB9E5FA926527EFD00CB246A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DB9E5F9A2652767200CB246A /* ContentView.swift */,
+				DB9E5FA726527E8900CB246A /* InfoView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB9E5F9B2652767200CB246A /* ContentView.swift in Sources */,
+				DB9E5FA826527E8900CB246A /* InfoView.swift in Sources */,
 				DB9E5F992652767200CB246A /* Sha_BusinessCardApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
